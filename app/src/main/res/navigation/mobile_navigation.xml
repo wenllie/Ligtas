@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.ligtas.ui.dashboard.HomeFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/nav_stay_healthy"
+        android:name="com.example.ligtas.ui.stayHealthy.StayHealthyActivity"
+        android:label="@string/menu_stay_healthy"
+        tools:layout="@layout/activity_stay_healthy" />
+    <activity
+        android:id="@+id/nav_monitor_your_health"
+        android:name="com.example.ligtas.ui.monitorHealth.MonitorYourHealthActivity"
+        android:label="@string/menu_monitor_your_health"
+        tools:layout="@layout/activity_monitor_your_health" />
+    <activity
+        android:id="@+id/nav_settings"
+        android:name="com.example.ligtas.ui.settings.SettingsActivity"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/activity_settings" />
+    <activity
+        android:id="@+id/nav_terms_and_conditions"
+        android:name="com.example.ligtas.ui.termsAndConditions.TermsAndConditionsActivity"
+        android:label="@string/menu_terms_and_conditions"
+        tools:layout="@layout/activity_terms_and_conditions" />
+    <activity
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.example.ligtas.ui.privacyPolicy.PrivacyPolicyActivity"
+        android:label="@string/menu_privacy_policy"
+        tools:layout="@layout/activity_privacy_policy" />
+
+</navigation>

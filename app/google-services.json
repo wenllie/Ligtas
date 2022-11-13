@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "645533456308",
+    "firebase_url": "https://ligtas-health-monitoring-app-default-rtdb.firebaseio.com",
+    "project_id": "ligtas-health-monitoring-app",
+    "storage_bucket": "ligtas-health-monitoring-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645533456308:android:ac52dc580d4bfc0fee84e1",
+        "android_client_info": {
+          "package_name": "com.example.ligtas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "645533456308-q9d56pl9v97kghunaa8eihv22umu5ttj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ligtas",
+            "certificate_hash": "5862c1f478e08b80885a9dae34ed018c9082d8d1"
+          }
+        },
+        {
+          "client_id": "645533456308-ahripb5hal1dhcv5f540fim5evqj7hfo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU3QfyTdRS4uLN7svHtsTDC7kGQXMkNF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645533456308-ahripb5hal1dhcv5f540fim5evqj7hfo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

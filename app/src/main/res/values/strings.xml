@@ -1,0 +1,168 @@
+<resources>
+    <string name="app_name">Ligtas</string>
+
+    <string name="digits_number">1234567890+</string>
+
+    <!--Gender-->
+    <string-array name="gender">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <!--Yes or no-->
+    <string-array name="yesno">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <!--User Type-->
+    <string-array name="userType">
+        <item>Student</item>
+        <item>Professor</item>
+        <item>Employee</item>
+    </string-array>
+
+    <!--Covid 19 Vaccinated-->
+    <string-array name="covid19">
+        <item>First Dose</item>
+        <item>Second Dose</item>
+        <item>Booster</item>
+    </string-array>
+
+    <!--Health Issue-->
+    <string-array name="comorbidity">
+        <item>Asthma</item>
+        <item>Cancer</item>
+        <item>Cardiovascular Disease</item>
+        <item>Cerebro-stroke/Cerebrovascular Accident</item>
+        <item>Chronic Kidney Disease</item>
+        <item>Chronic Liver Disease</item>
+        <item>Chronic Obstructive Pulmonary Disease (COPD)</item>
+        <item>Chronic Respiratory Tract Infection</item>
+        <item>Diabetes Mellitus</item>
+        <item>Down Syndrome</item>
+        <item>Emphysema</item>
+        <item>Hepatitis B</item>
+        <item>Hypertension</item>
+        <item>Immunodeficiency State</item>
+        <item>Neurologic Disease</item>
+        <item>Obesity (BMI of 30kg/m2 or higher)</item>
+        <item>Tuberculosis</item>
+    </string-array>
+
+    <string name="title_activity_user_navigation">UserNavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Navigation Menu-->
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_generate_qr_code">Generate QR-code</string>
+    <string name="menu_stay_healthy">Stay Healthy</string>
+    <string name="menu_monitor_your_health">Monitor Your Health</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_terms_and_conditions">Terms &amp; Conditions</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_logout">Log out</string>
+
+    <!--about ligtas-->
+    <string name="about_ligtas">
+        Ligtas is a Health Monitoring Mobile Application developed by the student researchers of Philippine State College
+        of Aeronautics (PHILSCA) - Villamor Campus that aims to help the aviation community management to manage and
+        monitor the user\'s health information.
+    </string>
+
+    <!--Terms and conditions-->
+    <string name="terms_and_conditions">
+        Welcome to our Application developed by Philippine State College of Aeronautics (VAB) researchers.
+        Suppose you continue to browse and use this Application. In that case, you agree to comply with and
+        be bound by the following terms and conditions of use, which, together with our privacy policy, govern
+        our relationship with you concerning this Application. These Terms include all other policies, rules,
+        and terms and conditions as outlined in Service materials from time to time, all of which are incorporated
+        herein. I understand that my personal information is protected by RA 10173, Data Privacy Act of 2012 and
+        that I am required to provide truthful information.
+
+        \n\n<b>Condition of Use</b>\n\n
+        We will provide this Application to you, which is subject to the conditions stated below in this document. Every time
+        you visit this Application and use its service, you accept the following conditions. Therefore, we urge you to
+        read and understand it carefully.
+        Your use of any information or materials on this Application is entirely at your own risk, for which we shall not be
+        liable. It shall be your own responsibility to ensure that any products, services, or information available through
+        this Application meet your specific requirements.
+
+        \n\n<b>Copyright</b>\n\n
+        This Application contains material that is owned by or licensed to us. It includes, but is not limited to, the contents,
+        layout, design, colors, appearance, graphics, and imagery of the Mobile Application, Contents, and Materials, as well
+        as copyrights, trademarks, and other intellectual property contained in the Mobile Application. All trademarks reproduced
+        in this Application, which are not the property of, or licensed to the operator, are acknowledged on the Application.
+        Unauthorized use of this Application may give rise to a claim for damages and be a criminal offense.
+
+        \n\n<b>Linkage to third parties</b>\n\n
+        From time to time, this Mobile Application may also include links to other websites. These links are provided for your
+        convenience to provide further information. They do not signify that we endorse the website(s). We have no responsibility
+        for the content of the linked website(s).
+
+        \n\n<b>Applicable Law</b>\n\n
+        By visiting this Application, you agree that the laws of the Philippines, without regard to principles of conflict laws,
+        will govern these terms and conditions or any dispute of any sort that might come between you or business partners and associates.
+        By continuing to use our Application, you acknowledge that you have had the chance to review and consider these Terms and
+        Conditions, and you acknowledge that you agreed to them. This means that you also consent to the use of your information
+        and the method of disclosure as described in these Terms and Conditions. If you do not understand the Terms and Conditions
+        or do not agree to them, then please do not use the Mobile Application.
+
+    </string>
+
+    <string name="privacy_policy">
+        POLICY ON CONSENSUAL DATA COLLECTION OF PERSONAL INFORMATION\n\n
+        The System, accessible on desktop and mobile devices, intends to assist researchers in more correctly and efficiently managing, analyzing,
+        and monitoring individual information. We guarantee user security and data privacy. As a result, we will only need what the System actually
+        needs to work. If someone chooses to use our Service, they will be informed of our policies regarding the collection, use, and disclosure of
+        Personal Information via this page.
+
+        \n\n<b>WHAT INFORMATION DO WE COLLECT FROM THE USER </b>\n\n
+        Without your permission, we never collect any personal information.
+        The Data Privacy Act of 2012, or Republic Act 10173, will be used to manage, preserve, and protect the personal information that the System collects.
+        The System will only gather, use, or disclose your personal information in accordance with this policy and the Data Privacy Act of 2012.
+        We only gather personal information for specific, legitimate objectives that have been decided upon and announced before or as soon as is practically
+        possible after collection, which will only be processed later in a manner consistent with those declared, specific, and legitimate goals.
+
+        \n\nThese are the following data needed upon using the Application:\n
+        1.Type of User\n
+        2.Name\n
+        3.Full Address\n
+        4.Email\n
+        5.Gender\n
+        6.Birthdate\n
+        7.Mobile Number\n
+        8.Password\n
+        9.Health Status\n
+        10.Comorbidity
+
+        \n\n<b>COOKIES </b>\n\n
+        Cookies are files with a small amount of data that are commonly used as unique anonymous identifiers. These are sent to your browser from the websites you visit and
+        stored on your device\'s internal memory.
+        This Service does not use these \“cookies\” explicitly. However, the app may use third-party code and libraries that use \“cookies\” to collect information and
+        improve their services. You can either accept or refuse these cookies and know when a cookie is being sent to your device. If you choose to refuse our cookies,
+        you may not be able to use some portions of this Service.
+
+        \n\n<b>WHAT WE DO WITH PERSONAL DATA AND COLLECTED DATA </b>\n\n
+        This data would only be retained and used specifically for the purpose of Web Application.
+
+        \n\n<b>HOW WE SECURE YOUR INFORMATION </b>\n\n
+        We implement reasonable and appropriate physical, technical, and organizational measures to prevent your information\'s loss, destruction, misuse, or alteration.
+        While there is no guarantee that information sent over the internet is fully secured, we keep and protect your information using a secured server behind a firewall,
+        encryption, and security controls.
+        Your Personal Data and Collected Data are protected by technical, organizational, and physical safeguards that keep them safe against destruction, unauthorized access,
+        alteration, disclosure, fraudulent usage, and/or any other illegal processing, as well as any natural and man-made hazards.
+
+        \n\n <b>CONTACT US </b>\n\n
+        If you have any questions or suggestions about our Privacy Policy, you may contact us at:\n
+        Email: ligtas.healthmonitoring@gmail.com\n
+        Last Updated: November 4, 2022.
+    </string>
+
+
+</resources>

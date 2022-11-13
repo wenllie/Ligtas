@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ligtas">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ligtas"
+        tools:targetApi="31">
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.WorkoutPlansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.DietPlansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.WaterIntakeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.monitorHealth.HealthAssessmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.monitorHealth.DailySelfAssessmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddressAndHealthInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.termsAndConditions.TermsAndConditionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.privacyPolicy.PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.monitorHealth.MonitorYourHealthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.StayHealthyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserNavigationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_user_navigation"
+            android:theme="@style/Theme.Ligtas.NoActionBar" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetProfilePictureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserVerifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

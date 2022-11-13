@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:drawable="@drawable/unchecked"
+        android:height="22dp"
+    android:width="22dp"
+    tools:targetApi="m"
+    tools:ignore="UnusedAttribute" />
+</layer-list>

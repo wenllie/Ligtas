@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Home">
+            <menu>
+                <item
+                    android:id="@+id/nav_dashboard"
+                    android:icon="@drawable/dashboard"
+                    android:title="@string/menu_dashboard" />
+
+                <item
+                    android:id="@+id/nav_monitor_your_health"
+                    android:icon="@drawable/monitor_your_health"
+                    android:title="@string/menu_monitor_your_health" />
+
+                <item
+                    android:id="@+id/nav_stay_healthy"
+                    android:icon="@drawable/stay_healthy"
+                    android:title="@string/menu_stay_healthy" />
+            </menu>
+        </item>
+
+        <item android:title="Account">
+            <menu>
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/settings"
+                    android:title="@string/menu_settings" />
+                <item
+                    android:id="@+id/nav_terms_and_conditions"
+                    android:icon="@drawable/terms_and_conditions"
+                    android:title="@string/menu_terms_and_conditions" />
+
+                <item
+                    android:id="@+id/nav_privacy_policy"
+                    android:icon="@drawable/privacy_policy"
+                    android:title="@string/menu_privacy_policy" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/logout"
+                    android:title="@string/menu_logout" />
+            </menu>
+        </item>
+    </group>
+</menu>
