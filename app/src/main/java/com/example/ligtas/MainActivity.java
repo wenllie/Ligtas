@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     } else {
                         Toast.makeText(MainActivity.this, "Log in failed! \n" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        clearField();
                     }
 
                 }

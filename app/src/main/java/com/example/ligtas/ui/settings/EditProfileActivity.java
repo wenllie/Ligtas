@@ -41,7 +41,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
     TextInputEditText editFullName, editGender, editBirthday, editAge, editIdNumber;
     TextInputEditText editAddressLine1, editAddressLine2, editBarangay, editCity;
     TextInputEditText editProvince, editZipCode, editEmergencyContactName, editEmergencyContactPhoneNumber;
-    TextInputEditText editHeight, editWeight, editCovid19Vaccinated, editCovid19Vaccine, editComorbidity, editComorbidityYes;
+    TextInputEditText editHeight, editWeight, editCovid19Vaccinated, editCovid19Vaccine, editHealthIssue;
     AppCompatButton changePasswordBtn, updateProfileBtn;
     AppCompatTextView deactivateAccountBtn;
 
@@ -73,8 +73,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         editWeight = findViewById(R.id.editWeight);
         editCovid19Vaccinated = findViewById(R.id.editCovid19Vaccinated);
         editCovid19Vaccine = findViewById(R.id.editCovid19Vaccine);
-        editComorbidity = findViewById(R.id.editComorbidity);
-        editComorbidityYes = findViewById(R.id.editComorbidityYes);
+        editHealthIssue = findViewById(R.id.editHealthIssue);
         changePasswordBtn = findViewById(R.id.changePasswordBtn);
         updateProfileBtn = findViewById(R.id.updateProfileBtn);
         deactivateAccountBtn = findViewById(R.id.deactivateAccountBtn);
@@ -186,8 +185,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         String weight = editWeight.getText().toString();
         String covid19Vaccinated = editCovid19Vaccinated.getText().toString();
         String covid19Vaccine = editCovid19Vaccine.getText().toString();
-        String healthIssue = editComorbidity.getText().toString();
-        String healthIssueName = editComorbidityYes.getText().toString();
+        String healthIssue = editHealthIssue.getText().toString();
 
         HashMap addressDetails = new HashMap();
         addressDetails.put("addressLineOne", addressLine1);
@@ -204,8 +202,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         healthDetails.put("weight", weight);
         healthDetails.put("covid19Vaccinated", covid19Vaccinated);
         healthDetails.put("covid19Vaccine", covid19Vaccine);
-        healthDetails.put("comorbidity", healthIssue);
-        healthDetails.put("comorbidityName", healthIssueName);
+        healthDetails.put("healthIssue", healthIssue);
 
         DatabaseReference userReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -279,14 +276,12 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                                         editWeight.setText(weight);
                                                         editCovid19Vaccinated.setText(covid19Vaccinated);
                                                         editCovid19Vaccine.setText(covid19Vaccine);
-                                                        editComorbidity.setText(healthIssue);
-                                                        editComorbidityYes.setText(healthIssueName);
+                                                        editHealthIssue.setText(healthIssue);
                                                         editHeight.clearFocus();
                                                         editWeight.clearFocus();
                                                         editCovid19Vaccinated.clearFocus();
                                                         editCovid19Vaccine.clearFocus();
-                                                        editComorbidity.clearFocus();
-                                                        editComorbidityYes.clearFocus();
+                                                        editHealthIssue.clearFocus();
 
                                                         Toast.makeText(EditProfileActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
 
@@ -369,14 +364,12 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                                         editWeight.setText(weight);
                                                         editCovid19Vaccinated.setText(covid19Vaccinated);
                                                         editCovid19Vaccine.setText(covid19Vaccine);
-                                                        editComorbidity.setText(healthIssue);
-                                                        editComorbidityYes.setText(healthIssueName);
+                                                        editHealthIssue.setText(healthIssue);
                                                         editHeight.clearFocus();
                                                         editWeight.clearFocus();
                                                         editCovid19Vaccinated.clearFocus();
                                                         editCovid19Vaccine.clearFocus();
-                                                        editComorbidity.clearFocus();
-                                                        editComorbidityYes.clearFocus();
+                                                        editHealthIssue.clearFocus();
 
                                                         Toast.makeText(EditProfileActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
 
@@ -459,14 +452,12 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                                         editWeight.setText(weight);
                                                         editCovid19Vaccinated.setText(covid19Vaccinated);
                                                         editCovid19Vaccine.setText(covid19Vaccine);
-                                                        editComorbidity.setText(healthIssue);
-                                                        editComorbidityYes.setText(healthIssueName);
+                                                        editHealthIssue.setText(healthIssue);
                                                         editHeight.clearFocus();
                                                         editWeight.clearFocus();
                                                         editCovid19Vaccinated.clearFocus();
                                                         editCovid19Vaccine.clearFocus();
-                                                        editComorbidity.clearFocus();
-                                                        editComorbidityYes.clearFocus();
+                                                        editHealthIssue.clearFocus();
 
                                                         Toast.makeText(EditProfileActivity.this, "Updated Successfully!", Toast.LENGTH_SHORT).show();
 
@@ -539,14 +530,14 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Address Information")) {
 
-                                            editAddressLine1.setText(personalInfoSnap.child("addressLineOne").getValue().toString());
-                                            editAddressLine2.setText(personalInfoSnap.child("addressLineTwo").getValue().toString());
+                                            editAddressLine1.setText(personalInfoSnap.child("addressLine1").getValue().toString());
+                                            editAddressLine2.setText(personalInfoSnap.child("addressLine2").getValue().toString());
                                             editBarangay.setText(personalInfoSnap.child("barangay").getValue().toString());
                                             editCity.setText(personalInfoSnap.child("city").getValue().toString());
                                             editProvince.setText(personalInfoSnap.child("province").getValue().toString());
                                             editZipCode.setText(personalInfoSnap.child("zipCode").getValue().toString());
-                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactName").getValue().toString());
-                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhoneNumber").getValue().toString());
+                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactFullName").getValue().toString());
+                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhone").getValue().toString());
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Health Information")) {
 
@@ -554,8 +545,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                             editWeight.setText(personalInfoSnap.child("weight").getValue().toString());
                                             editCovid19Vaccinated.setText(personalInfoSnap.child("covid19Vaccinated").getValue().toString());
                                             editCovid19Vaccine.setText(personalInfoSnap.child("covid19Vaccine").getValue().toString());
-                                            editComorbidity.setText(personalInfoSnap.child("comorbidity").getValue().toString());
-                                            editComorbidityYes.setText(personalInfoSnap.child("comorbidityName").getValue().toString());
+                                            editHealthIssue.setText(personalInfoSnap.child("healthIssue").getValue().toString());
 
                                         }
 
@@ -592,14 +582,14 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Address Information")) {
 
-                                            editAddressLine1.setText(personalInfoSnap.child("addressLineOne").getValue().toString());
-                                            editAddressLine2.setText(personalInfoSnap.child("addressLineTwo").getValue().toString());
+                                            editAddressLine1.setText(personalInfoSnap.child("addressLine1").getValue().toString());
+                                            editAddressLine2.setText(personalInfoSnap.child("addressLine2").getValue().toString());
                                             editBarangay.setText(personalInfoSnap.child("barangay").getValue().toString());
                                             editCity.setText(personalInfoSnap.child("city").getValue().toString());
                                             editProvince.setText(personalInfoSnap.child("province").getValue().toString());
                                             editZipCode.setText(personalInfoSnap.child("zipCode").getValue().toString());
-                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactName").getValue().toString());
-                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhoneNumber").getValue().toString());
+                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactFullName").getValue().toString());
+                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhone").getValue().toString());
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Health Information")) {
 
@@ -607,8 +597,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                             editWeight.setText(personalInfoSnap.child("weight").getValue().toString());
                                             editCovid19Vaccinated.setText(personalInfoSnap.child("covid19Vaccinated").getValue().toString());
                                             editCovid19Vaccine.setText(personalInfoSnap.child("covid19Vaccine").getValue().toString());
-                                            editComorbidity.setText(personalInfoSnap.child("comorbidity").getValue().toString());
-                                            editComorbidityYes.setText(personalInfoSnap.child("comorbidityName").getValue().toString());
+                                            editHealthIssue.setText(personalInfoSnap.child("healthIssue").getValue().toString());
 
                                         }
 
@@ -645,14 +634,14 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Address Information")) {
 
-                                            editAddressLine1.setText(personalInfoSnap.child("addressLineOne").getValue().toString());
-                                            editAddressLine2.setText(personalInfoSnap.child("addressLineTwo").getValue().toString());
+                                            editAddressLine1.setText(personalInfoSnap.child("addressLine1").getValue().toString());
+                                            editAddressLine2.setText(personalInfoSnap.child("addressLine2").getValue().toString());
                                             editBarangay.setText(personalInfoSnap.child("barangay").getValue().toString());
                                             editCity.setText(personalInfoSnap.child("city").getValue().toString());
                                             editProvince.setText(personalInfoSnap.child("province").getValue().toString());
                                             editZipCode.setText(personalInfoSnap.child("zipCode").getValue().toString());
-                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactName").getValue().toString());
-                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhoneNumber").getValue().toString());
+                                            editEmergencyContactName.setText(personalInfoSnap.child("emergencyContactFullName").getValue().toString());
+                                            editEmergencyContactPhoneNumber.setText(personalInfoSnap.child("emergencyContactPhone").getValue().toString());
 
                                         } else if (personalInfoKey.equalsIgnoreCase("Health Information")) {
 
@@ -660,8 +649,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                                             editWeight.setText(personalInfoSnap.child("weight").getValue().toString());
                                             editCovid19Vaccinated.setText(personalInfoSnap.child("covid19Vaccinated").getValue().toString());
                                             editCovid19Vaccine.setText(personalInfoSnap.child("covid19Vaccine").getValue().toString());
-                                            editComorbidity.setText(personalInfoSnap.child("comorbidity").getValue().toString());
-                                            editComorbidityYes.setText(personalInfoSnap.child("comorbidityName").getValue().toString());
+                                            editHealthIssue.setText(personalInfoSnap.child("healthIssue").getValue().toString());
 
                                         }
 

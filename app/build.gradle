@@ -64,4 +64,13 @@ dependencies {
     //dialog plus
     implementation 'com.orhanobut:dialogplus:1.11@aar'
 
+    //carousel image
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
+    //barcode generator
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+
+    //save qr code
+    implementation 'com.github.androidmads:QRGenerator:1.0.1'
+
 }

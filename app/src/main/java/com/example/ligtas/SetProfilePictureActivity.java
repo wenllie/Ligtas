@@ -70,7 +70,7 @@ public class SetProfilePictureActivity extends AppCompatActivity {
         completeSetUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SetProfilePictureActivity.this, AddressAndHealthInfoActivity.class));
+                startActivity(new Intent(SetProfilePictureActivity.this, AddressInfoActivity.class));
                 finish();
             }
         });

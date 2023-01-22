@@ -157,42 +157,44 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/healthAssessmentCardView"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_margin="20dp"
-            app:cardElevation="20dp"
-            app:cardCornerRadius="10dp">
-
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.cardview.widget.CardView
+                android:id="@+id/generateQRCodeCardView"
+                android:visibility="gone"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                app:cardElevation="20dp"
+                app:cardCornerRadius="10dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_margin="10dp">
+                    android:layout_height="match_parent">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="70dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/health_assessment"/>
-
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Health Assessment"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:gravity="center_vertical"
-                        android:textStyle="bold"/>
+                        android:orientation="horizontal"
+                        android:layout_margin="10dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/qr_code"
+                            android:padding="5dp"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Generate my QR-code"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:gravity="center_vertical"
+                            android:textStyle="bold"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

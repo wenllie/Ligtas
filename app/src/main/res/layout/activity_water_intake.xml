@@ -21,6 +21,21 @@
             android:src="@drawable/ic_baseline_close_24"
             app:tint="?colorSecondaryVariant" />
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/waterIntakeReminderNotificationButton"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:padding="8dp"
+                android:src="@drawable/notification"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -28,45 +43,94 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.airbnb.lottie.LottieAnimationView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
-            app:lottie_rawRes="@raw/water_in_glass"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/drinkWaterCount"
+            <View
+                android:layout_width="420dp"
+                android:layout_height="420dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_water_intake_round"
+                android:backgroundTint="?colorPrimary"
+                app:srcCompat="@drawable/ic_water_intake_round" />
+
+            <ProgressBar
+                android:id="@+id/waterIntakeProgressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="290dp"
+                android:layout_height="290dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circle_shape"
+                android:indeterminate="false"
+                android:progressDrawable="@drawable/circle_progress_bar"
+                android:textAlignment="center" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/aldrich"
+                    android:gravity="center"
+                    android:text="Daily Goal"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/waterIntakeProgressTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/aldrich"
+                    android:gravity="center"
+                    android:text="---"
+                    android:textSize="40sp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/drinkWaterbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/main_rounded_button_primary_color"
-            android:layout_margin="20dp"
-            android:text="Drink Water"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/drinkWaterbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/main_rounded_button_primary_color"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:text="Drink Water"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/main_rounded_button_primary_color"
-            android:layout_margin="20dp"
-            android:text="Turn on Reminder Notification"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/waterIntakeGoalBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/main_rounded_button_primary_color"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="20dp"
+                android:text="Set Goal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

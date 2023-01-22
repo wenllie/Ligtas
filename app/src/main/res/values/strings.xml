@@ -24,13 +24,15 @@
 
     <!--Covid 19 Vaccinated-->
     <string-array name="covid19">
+        <item></item>
         <item>First Dose</item>
         <item>Second Dose</item>
         <item>Booster</item>
     </string-array>
 
     <!--Health Issue-->
-    <string-array name="comorbidity">
+    <string-array name="health_issue_names">
+        <item>ADHD</item>
         <item>Asthma</item>
         <item>Cancer</item>
         <item>Cardiovascular Disease</item>
@@ -39,14 +41,20 @@
         <item>Chronic Liver Disease</item>
         <item>Chronic Obstructive Pulmonary Disease (COPD)</item>
         <item>Chronic Respiratory Tract Infection</item>
-        <item>Diabetes Mellitus</item>
+        <item>Color Blindness</item>
+        <item>Diabetes</item>
         <item>Down Syndrome</item>
         <item>Emphysema</item>
+        <item>Fluid and electrolyte disorders</item>
+        <item>Heart disease</item>
         <item>Hepatitis B</item>
+        <item>High blood pressure</item>
         <item>Hypertension</item>
         <item>Immunodeficiency State</item>
         <item>Neurologic Disease</item>
         <item>Obesity (BMI of 30kg/m2 or higher)</item>
+        <item>Respiratory Disease</item>
+        <item>Sleep apnea</item>
         <item>Tuberculosis</item>
     </string-array>
 

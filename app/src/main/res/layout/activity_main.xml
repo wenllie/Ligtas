@@ -60,6 +60,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="60dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/ic_baseline_person_24"
                     android:backgroundTint="?colorOnSecondary" />
 
@@ -143,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forgot Password?"
-                    android:textColor="?colorPrimary"/>
+                    android:textColor="?colorPrimary" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

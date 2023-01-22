@@ -414,9 +414,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:boxCornerRadiusTopStart="20dp"
-                        app:boxCornerRadiusTopEnd="20dp"
-                        app:boxCornerRadiusBottomEnd="20dp"
-                        app:boxCornerRadiusBottomStart="20dp">
+                        app:boxCornerRadiusTopEnd="20dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editCovid19Vaccinated"
@@ -431,8 +429,6 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:boxCornerRadiusTopStart="20dp"
-                        app:boxCornerRadiusTopEnd="20dp"
                         app:boxCornerRadiusBottomEnd="20dp"
                         app:boxCornerRadiusBottomStart="20dp">
 
@@ -451,30 +447,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         app:boxCornerRadiusTopStart="20dp"
-                        app:boxCornerRadiusTopEnd="20dp">
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusBottomEnd="20dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editComorbidity"
+                            android:id="@+id/editHealthIssue"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="With Comorbidity"
+                            android:hint="Health Issue"
                             android:inputType="text"
-                            android:textColorHint="@color/green_dark" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:boxCornerRadiusBottomEnd="20dp"
-                        app:boxCornerRadiusBottomStart="20dp">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editComorbidityYes"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Comorbidity Name"
-                            android:inputType="text|textMultiLine"
                             android:textColorHint="@color/green_dark" />
                     </com.google.android.material.textfield.TextInputLayout>
 

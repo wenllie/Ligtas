@@ -7,9 +7,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_condition.xml" value="0.2235" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_good_condition.xml" value="0.1375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_mild_condition.xml" value="0.1375" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_progress_bar.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_severe_condition.xml" value="0.1375" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/circle_shape.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/dialog_box_donate.xml" value="0.2205" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/dialog_rounded_top.xml" value="0.2205" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/green_rounded_button.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/ic_blob_haikei_1.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/ic_blob_scatter_haikei.xml" value="0.223" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/ic_blob_scene_haikei.xml" value="0.223" />
@@ -20,16 +23,21 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/ic_stacked_waves_haikei_2.xml" value="0.1375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/ic_verify_bg.xml" value="0.223" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/main_rounded_button_primary_color.xml" value="0.1965" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/rounded_background_white.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/self_assessment_check_box.xml" value="0.223" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/theme_chooser_background.xml" value="0.1925" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/unchecked_checkbox_bg.xml" value="0.136" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_address_and_health_info.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_address_info.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_change_password.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_daily_self_assessment.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_diet_plans.xml" value="0.3484375" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_drink_water.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_forgot_password.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_generate_qr_code.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_health_assessment.xml" value="0.34427083333333336" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_health_info.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_monitor_your_health.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_privacy_policy.xml" value="0.3484375" />
@@ -43,16 +51,22 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_user_navigation.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_user_verify.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_water_intake.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_water_intake_goal.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_water_intake_reminder.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_welcome.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_workout_plans.xml" value="0.3484375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/app_bar_user_navigation.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/card_view_newsfeed.xml" value="0.13820283762480295" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/content_user_navigation.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/dialog_box_about_us.xml" value="0.3572916666666667" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/dialog_box_contact_us.xml" value="0.3138586956521739" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/dialog_box_donate.xml" value="0.35833333333333334" />
-        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/fragment_home.xml" value="0.2671785028790787" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/health_issue_list.xml" value="0.3614583333333333" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/nav_header_user_navigation.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/newsfeed_slider_image.xml" value="0.3614583333333333" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/pop_up_set_theme.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/water_intake_reminder_layout.xml" value="0.3614583333333333" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/menu/activity_main_drawer.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/menu/user_navigation.xml" value="0.3625" />
       </map>

@@ -3,12 +3,13 @@ package com.example.ligtas.ui.monitorHealth;
 public class SelfAssessmentHelper {
 
     boolean achesAndPains, diarrhea, dryCough, fatigue, fever, lossTasteAndSmell, headAche, runnyNose, shortnessOfBreath, soreThroat, noneOfTheAbove;
+    String condition;
 
     public SelfAssessmentHelper() {
 
     }
 
-    public SelfAssessmentHelper(boolean achesAndPains, boolean diarrhea, boolean dryCough, boolean fatigue, boolean fever, boolean lossTasteAndSmell, boolean headAche, boolean runnyNose, boolean shortnessOfBreath, boolean soreThroat, boolean noneOfTheAbove) {
+    public SelfAssessmentHelper(boolean achesAndPains, boolean diarrhea, boolean dryCough, boolean fatigue, boolean fever, boolean lossTasteAndSmell, boolean headAche, boolean runnyNose, boolean shortnessOfBreath, boolean soreThroat, boolean noneOfTheAbove, String condition) {
         this.achesAndPains = achesAndPains;
         this.diarrhea = diarrhea;
         this.dryCough = dryCough;
@@ -20,6 +21,7 @@ public class SelfAssessmentHelper {
         this.shortnessOfBreath = shortnessOfBreath;
         this.soreThroat = soreThroat;
         this.noneOfTheAbove = noneOfTheAbove;
+        this.condition = condition;
     }
 
     public boolean isAchesAndPains() {
@@ -108,5 +110,13 @@ public class SelfAssessmentHelper {
 
     public void setNoneOfTheAbove(boolean noneOfTheAbove) {
         this.noneOfTheAbove = noneOfTheAbove;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 }

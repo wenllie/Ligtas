@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.example.ligtas.R;
 import com.example.ligtas.UserNavigationActivity;
@@ -120,14 +121,16 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
                                         String personalInfoKey = personalInfoSnap.getKey();
 
+
                                         if (personalInfoKey.equalsIgnoreCase("Profile Photo")) {
 
                                             Picasso.get().load(personalInfoSnap.child("profileUrl").getValue().toString()).into(profileImage);
 
-                                        } else if (personalInfoKey.equalsIgnoreCase("Personal Information")) {
+                                        } if (personalInfoKey.equalsIgnoreCase("Personal Information")) {
 
                                             registeredFullName.setText(personalInfoSnap.child("fullName").getValue().toString());
                                             registeredEmail.setText(personalInfoSnap.child("email").getValue().toString());
+
 
                                         }
 

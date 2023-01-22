@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ligtas">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +22,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ligtas"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.stayHealthy.DrinkWaterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.WaterIntakeReminderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.WaterIntakeGoalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HealthInfoActivity"
+            android:exported="false" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:exported="false" />
@@ -32,7 +53,7 @@
             android:name=".ui.settings.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.monitorHealth.HealthAssessmentActivity"
+            android:name=".ui.monitorHealth.GenerateQrCodeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.monitorHealth.DailySelfAssessmentActivity"
@@ -47,7 +68,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddressAndHealthInfoActivity"
+            android:name=".AddressInfoActivity"
             android:exported="false" />
         <activity
             android:name=".ui.termsAndConditions.TermsAndConditionsActivity"
@@ -88,6 +109,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".ui.stayHealthy.WaterIntakeNotificationPublisher" />
+        <receiver android:name=".ui.stayHealthy.HourlyReminderReceiver" />
     </application>
 
 </manifest>

@@ -7,8 +7,10 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -28,7 +30,7 @@ import java.util.Calendar;
 public class MonitorYourHealthActivity extends AppCompatActivity implements View.OnClickListener {
 
     AppCompatImageView fromMonitorYourHealthToDashboard;
-    CardView dailySelfAssessmentCardView, healthAssessmentCardView;
+    CardView dailySelfAssessmentCardView, generateQRCodeCardView;
     AppCompatTextView myhCurrentDate, myhConditionTextView;
     LinearLayoutCompat healthStatusLayout;
     AppCompatImageView myhCircleConditionImageView, myhConditionImageView;
@@ -39,6 +41,8 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
             "August", "September", "October", "November",
             "December"};
 
+    String currentDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +51,7 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
         myhCurrentDate = findViewById(R.id.myhCurrentDate);
         fromMonitorYourHealthToDashboard = findViewById(R.id.fromMonitorYourHealthToDashboard);
         dailySelfAssessmentCardView = findViewById(R.id.dailySelfAssessmentCardView);
-        healthAssessmentCardView = findViewById(R.id.healthAssessmentCardView);
+        generateQRCodeCardView = findViewById(R.id.generateQRCodeCardView);
         myhCircleConditionImageView = findViewById(R.id.myhCircleConditionImageView);
         myhConditionImageView = findViewById(R.id.myhConditionImageView);
         myhConditionTextView = findViewById(R.id.myhConditionTextView);
@@ -58,7 +62,11 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
         int year = calendar.get(Calendar.YEAR);
         String month = monthName[calendar.get(Calendar.MONTH)];
 
+        currentDate = month + " " + day + " " + year;
+
         myhCurrentDate.setText(month + " " + String.valueOf(day) + ", " + String.valueOf(year));
+
+
 
         /*User health condition*/
         myhCircleConditionImageView.setVisibility(View.GONE);
@@ -66,7 +74,7 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
         fromMonitorYourHealthToDashboard.setOnClickListener(this);
         dailySelfAssessmentCardView.setOnClickListener(this);
-        healthAssessmentCardView.setOnClickListener(this);
+        generateQRCodeCardView.setOnClickListener(this);
 
     }
 
@@ -92,9 +100,11 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                 finish();
                 break;
 
-            case R.id.healthAssessmentCardView:
-                startActivity(new Intent(MonitorYourHealthActivity.this, HealthAssessmentActivity.class));
+            case R.id.generateQRCodeCardView:
+
+                startActivity(new Intent(MonitorYourHealthActivity.this, GenerateQrCodeActivity.class));
                 finish();
+
                 break;
 
         }
@@ -130,74 +140,115 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                             for (DataSnapshot dateSnap : assessmentSnap.getChildren()) {
 
-                                                for (DataSnapshot snap : dateSnap.getChildren()) {
+                                                String dateKey = dateSnap.getKey();
 
-                                                    String assessedKey = snap.getKey();
+                                                if (dateKey.equalsIgnoreCase(currentDate)) {
 
-                                                    if (!assessedKey.equalsIgnoreCase("noneOfTheAbove")) {
+                                                    dailySelfAssessmentCardView.setEnabled(false);
+                                                    dailySelfAssessmentCardView.setCardBackgroundColor(getResources().getColor(R.color.orange_light));
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                    for (DataSnapshot snap : dateSnap.getChildren()) {
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
-                                                            myhConditionTextView.setText("Bad Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+                                                        String assessedKey = snap.getKey();
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                        if (assessedKey.equalsIgnoreCase("condition")) {
 
+                                                            String condition = snap.getValue().toString();
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                            if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols.\n" +
-                                                                                    "Please have yourself checked first by medical health personnel as soon as possible.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                generateQRCodeCardView.setVisibility(View.VISIBLE);
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                        }
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                    } else {
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
+                                                                                        "Please stay safe and follow the health protocols.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
-                                                            myhConditionTextView.setText("Good Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+                                                            } else if (condition.equalsIgnoreCase("Mild Condition")) {
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_mild_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
-                                                                                    "Please stay safe and follow the health protocols.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            } else if (condition.equalsIgnoreCase("Severe Condition")) {
+
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
+
+
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
+                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
+
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            }
+
 
 
                                                         }
@@ -205,7 +256,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                     }
 
                                                 }
-
 
                                             }
 
@@ -237,74 +287,115 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                             for (DataSnapshot dateSnap : assessmentSnap.getChildren()) {
 
-                                                for (DataSnapshot snap : dateSnap.getChildren()) {
+                                                String dateKey = dateSnap.getKey();
 
-                                                    String assessedKey = snap.getKey();
+                                                if (dateKey.equalsIgnoreCase(currentDate)) {
 
-                                                    if (!assessedKey.equalsIgnoreCase("noneOfTheAbove")) {
+                                                    dailySelfAssessmentCardView.setEnabled(false);
+                                                    dailySelfAssessmentCardView.setCardBackgroundColor(getResources().getColor(R.color.orange_light));
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                    for (DataSnapshot snap : dateSnap.getChildren()) {
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
-                                                            myhConditionTextView.setText("Bad Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+                                                        String assessedKey = snap.getKey();
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                        if (assessedKey.equalsIgnoreCase("condition")) {
 
+                                                            String condition = snap.getValue().toString();
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                            if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols.\n" +
-                                                                                    "Please have yourself checked first by medical health personnel as soon as possible.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                generateQRCodeCardView.setVisibility(View.VISIBLE);
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                        }
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                    } else {
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
+                                                                                        "Please stay safe and follow the health protocols.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
-                                                            myhConditionTextView.setText("Good Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+                                                            } else if (condition.equalsIgnoreCase("Mild Condition")) {
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_mild_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
-                                                                                    "Please stay safe and follow the health protocols.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            } else if (condition.equalsIgnoreCase("Severe Condition")) {
+
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
+
+
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
+                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
+
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            }
+
 
 
                                                         }
@@ -312,7 +403,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                     }
 
                                                 }
-
 
                                             }
 
@@ -344,74 +434,115 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                             for (DataSnapshot dateSnap : assessmentSnap.getChildren()) {
 
-                                                for (DataSnapshot snap : dateSnap.getChildren()) {
+                                                String dateKey = dateSnap.getKey();
 
-                                                    String assessedKey = snap.getKey();
+                                                if (dateKey.equalsIgnoreCase(currentDate)) {
 
-                                                    if (!assessedKey.equalsIgnoreCase("noneOfTheAbove")) {
+                                                    dailySelfAssessmentCardView.setEnabled(false);
+                                                    dailySelfAssessmentCardView.setCardBackgroundColor(getResources().getColor(R.color.orange_light));
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                    for (DataSnapshot snap : dateSnap.getChildren()) {
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
-                                                            myhConditionTextView.setText("Bad Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+                                                        String assessedKey = snap.getKey();
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                        if (assessedKey.equalsIgnoreCase("condition")) {
 
+                                                            String condition = snap.getValue().toString();
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                            if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols.\n" +
-                                                                                    "Please have yourself checked first by medical health personnel as soon as possible.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                generateQRCodeCardView.setVisibility(View.VISIBLE);
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                        }
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                    } else {
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
+                                                                                        "Please stay safe and follow the health protocols.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                        if (snap.getValue().toString().equalsIgnoreCase("true")) {
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
 
-                                                            myhCircleConditionImageView.setVisibility(View.VISIBLE);
-                                                            myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_good_condition));
-                                                            myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.good_condition));
-                                                            myhConditionTextView.setText("Good Condition");
-                                                            healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.green_lighter));
+                                                            } else if (condition.equalsIgnoreCase("Mild Condition")) {
 
-                                                            healthStatusLayout.setOnClickListener(new View.OnClickListener() {
-                                                                @Override
-                                                                public void onClick(View view) {
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_mild_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
 
 
-                                                                    MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
-                                                                    alertDialogBuilder.setTitle("Health Status")
-                                                                            .setMessage("You are in a good condition you may now proceed with your daily activities.\n" +
-                                                                                    "Please stay safe and follow the health protocols.")
-                                                                            .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                                                                                @Override
-                                                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                                                    dialogInterface.dismiss();
-                                                                                }
-                                                                            });
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
 
-                                                                    alertDialogBuilder.show();
-                                                                }
-                                                            });
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            } else if (condition.equalsIgnoreCase("Severe Condition")) {
+
+                                                                generateQRCodeCardView.setVisibility(View.GONE);
+
+                                                                myhCircleConditionImageView.setVisibility(View.VISIBLE);
+                                                                myhCircleConditionImageView.setBackground(getResources().getDrawable(R.drawable.circle_severe_condition));
+                                                                myhConditionImageView.setBackground(getResources().getDrawable(R.drawable.mild_condition));
+                                                                myhConditionTextView.setText(condition);
+                                                                healthStatusLayout.setBackgroundColor(getResources().getColor(R.color.orange_light));
+
+                                                                healthStatusLayout.setOnClickListener(new View.OnClickListener() {
+                                                                    @Override
+                                                                    public void onClick(View view) {
+
+
+                                                                        MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
+
+                                                                        alertDialogBuilder.setTitle("Health Status")
+                                                                                .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
+                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                                                                                    @Override
+                                                                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                                                                        dialogInterface.dismiss();
+                                                                                    }
+                                                                                });
+
+                                                                        alertDialogBuilder.show();
+                                                                    }
+                                                                });
+
+                                                            }
+
 
 
                                                         }
@@ -419,7 +550,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                     }
 
                                                 }
-
 
                                             }
 

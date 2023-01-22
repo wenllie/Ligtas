@@ -472,74 +472,79 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             PersonalDetails personalDetails = new PersonalDetails(user.getUid(), email, phoneNumber, fullName, gender, birthday, age, idNumber);
 
                             //extracting user reference from database for "Registered Users"
-                            DatabaseReference personalReference = FirebaseDatabase.getInstance().getReference("Users").child("Students");
 
-                            personalReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            FirebaseDatabase.getInstance().getReference("Users").child("Students").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                                 @Override
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
 
-                                    for (DataSnapshot snap : task.getResult().getChildren()) {
+                                    if (task.isSuccessful()) {
 
-                                        String IDKey = snap.getKey();
+                                        for (DataSnapshot snap : task.getResult().getChildren()) {
 
-                                        if (IDKey.equalsIgnoreCase(idNumber)) {
+                                            String IDKey = snap.getKey();
 
-                                            Toast.makeText(RegisterActivity.this, idNumber + " is already registered. Please enter a different ID number", Toast.LENGTH_SHORT).show();
+                                            if (IDKey.equalsIgnoreCase(idNumber)) {
 
-                                        } else {
+                                                Toast.makeText(RegisterActivity.this, idNumber + " is already registered. Please enter a different ID number", Toast.LENGTH_SHORT).show();
 
-                                            personalReference.child(idNumber).child(user.getUid()).child("Personal Information").setValue(personalDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
+                                            } else {
+                                                FirebaseDatabase.getInstance().getReference("Users").child("Students").child(idNumber).child(user.getUid()).child("Personal Information").setValue(personalDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
 
-                                                    if (task.isSuccessful()) {
-                                                        //send email verification
-                                                        user.sendEmailVerification();
+                                                        if (task.isSuccessful()) {
+                                                            //send email verification
+                                                            user.sendEmailVerification();
 
-                                                        // to get the user ID for verifying user
+                                                            // to get the user ID for verifying user
 //                                    UserVerifyActivity.userID = user.getUid();
 
-                                                        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                                            mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
-                                                            @Override
-                                                            public void onVerificationCompleted(PhoneAuthCredential credential) {
-                                                            }
+                                                                @Override
+                                                                public void onVerificationCompleted(PhoneAuthCredential credential) {
+                                                                }
 
-                                                            @Override
-                                                            public void onVerificationFailed(FirebaseException e) {
-                                                                Toast.makeText(RegisterActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                                            }
+                                                                @Override
+                                                                public void onVerificationFailed(FirebaseException e) {
+                                                                    Toast.makeText(RegisterActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                                                }
 
-                                                            @Override
-                                                            public void onCodeSent(@NonNull String verificationId,
-                                                                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
-                                                                //verify user after successful registration
-                                                                Intent verify = new Intent(RegisterActivity.this, UserVerifyActivity.class);
-                                                                //prevent user from returning back to the register page on pressing back button after registration
-                                                                verify.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                                verify.putExtra("phone", registerPhoneNumber.getText().toString().trim());
-                                                                verify.putExtra("verificationId", verificationId);
-                                                                startActivity(verify);
-                                                                finish();
-                                                            }
-                                                        };
-                                                        PhoneAuthOptions options =
-                                                                PhoneAuthOptions.newBuilder(mAuth)
-                                                                        .setPhoneNumber("+63" + registerPhoneNumber.getText().toString().trim())       // Phone number to verify
-                                                                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                                                        .setActivity(RegisterActivity.this)                 // Activity (for callback binding)
-                                                                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                                                                        .build();
-                                                        PhoneAuthProvider.verifyPhoneNumber(options);
+                                                                @Override
+                                                                public void onCodeSent(@NonNull String verificationId,
+                                                                                       @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                                                                    //verify user after successful registration
+                                                                    Intent verify = new Intent(RegisterActivity.this, UserVerifyActivity.class);
+                                                                    //prevent user from returning back to the register page on pressing back button after registration
+                                                                    verify.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                                    verify.putExtra("phone", registerPhoneNumber.getText().toString().trim());
+                                                                    verify.putExtra("verificationId", verificationId);
+                                                                    startActivity(verify);
+                                                                    finish();
+                                                                }
+                                                            };
+                                                            PhoneAuthOptions options =
+                                                                    PhoneAuthOptions.newBuilder(mAuth)
+                                                                            .setPhoneNumber("+63" + registerPhoneNumber.getText().toString().trim())       // Phone number to verify
+                                                                            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                                                                            .setActivity(RegisterActivity.this)                 // Activity (for callback binding)
+                                                                            .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                                                                            .build();
+                                                            PhoneAuthProvider.verifyPhoneNumber(options);
 
-                                                    } else {
-                                                        Toast.makeText(RegisterActivity.this, "Registration failed! Please try again.", Toast.LENGTH_LONG).show();
+                                                        } else {
+                                                            Toast.makeText(RegisterActivity.this, "Registration failed! Please try again.", Toast.LENGTH_LONG).show();
+                                                        }
                                                     }
-                                                }
-                                            });
+                                                });
 
+                                            }
                                         }
+
+                                    } else {
+                                        Toast.makeText(RegisterActivity.this, "Registration failed!", Toast.LENGTH_SHORT).show();
                                     }
+
 
                                 }
                             });

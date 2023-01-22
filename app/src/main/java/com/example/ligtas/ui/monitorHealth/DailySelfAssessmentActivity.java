@@ -21,8 +21,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -35,12 +37,17 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
     CheckBox noneCheckBox, soreThroatCheckBox, agreeCheckBox;
     AppCompatImageView fromdsaTomyh;
     AppCompatButton dsaSubmitBtn;
+    SelfAssessmentHelper selfAssessmentHelper = new SelfAssessmentHelper();
 
     private Calendar calendar;
     String[] monthName = {"January", "February",
             "March", "April", "May", "June", "July",
             "August", "September", "October", "November",
             "December"};
+
+    //checkbox
+    int checks = 0;
+    String condition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,29 +145,117 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
                 runnyNoseCheckBox.setEnabled(true);
                 shortnessCheckBox.setEnabled(true);
                 soreThroatCheckBox.setEnabled(true);
-                agreeCheckBox.setEnabled(false);
 
             }
+
+            agreeCheckBox.setChecked(false);
+
         } else if (compoundButton != noneCheckBox && compoundButton != agreeCheckBox) {
 
             if (checked) {
 
+                selfAssessmentHelper.setNoneOfTheAbove(false);
                 noneCheckBox.setEnabled(false);
                 agreeCheckBox.setEnabled(true);
 
             } else {
 
+                if (checks == 1) {
+                    agreeCheckBox.setEnabled(false);
+                }
+
+                selfAssessmentHelper.setCondition("");
                 noneCheckBox.setEnabled(true);
-                agreeCheckBox.setEnabled(false);
+            }
+
+            agreeCheckBox.setChecked(false);
+
+            if (compoundButton == achesCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == diarrheaCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == dryCoughCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == fatigueCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == feverCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == headAcheCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == lostTasteCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == runnyNoseCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == shortnessCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
+
+            } else if (compoundButton == soreThroatCheckBox) {
+
+                if (checked) {
+                    checks = checks + 1;
+                } else {
+                    checks = checks - 1;
+                }
 
             }
 
+
         } else if (compoundButton == agreeCheckBox) {
 
-            /*Disable submit button*/
-            dsaSubmitBtn.setEnabled(false);
             if (checked) {
-                dsaSubmitBtn.setEnabled(true);
                 dsaSubmitBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -169,7 +264,15 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
 
                     private void saveDailyAssessment() {
 
-                        SelfAssessmentHelper selfAssessmentHelper = new SelfAssessmentHelper(achesCheckBox.isChecked(), diarrheaCheckBox.isChecked(), dryCoughCheckBox.isChecked(), fatigueCheckBox.isChecked(), feverCheckBox.isChecked(), headAcheCheckBox.isChecked(), lostTasteCheckBox.isChecked(), runnyNoseCheckBox.isChecked(), shortnessCheckBox.isChecked(), soreThroatCheckBox.isChecked(), noneCheckBox.isChecked());
+                        if (checks == 0) {
+                            condition = "Good Condition";
+                        } else if (checks == 1) {
+                            condition = "Mild Condition";
+                        } else if (checks >= 2) {
+                            condition = "Severe Condition";
+                        }
+
+                        SelfAssessmentHelper selfAssessmentHelper = new SelfAssessmentHelper(achesCheckBox.isChecked(), diarrheaCheckBox.isChecked(), dryCoughCheckBox.isChecked(), fatigueCheckBox.isChecked(), feverCheckBox.isChecked(), headAcheCheckBox.isChecked(), lostTasteCheckBox.isChecked(), runnyNoseCheckBox.isChecked(), shortnessCheckBox.isChecked(), soreThroatCheckBox.isChecked(), noneCheckBox.isChecked(), condition);
 
                         DatabaseReference submitDailyAssessmentReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -200,10 +303,41 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
 
                                                 if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
-                                                    setCheckboxToFalse();
-                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
-                                                    finish();
+                                                    for (DataSnapshot dailySnap : userIdSnap.getChildren()) {
+
+                                                        String dailyKey = dailySnap.getKey();
+
+                                                        if (dailySnap.hasChild("Daily Self Assessment")) {
+
+                                                            for (DataSnapshot dailyAssSnap : dailySnap.getChildren()) {
+
+                                                                String dailyAssKey = dailyAssSnap.getKey();
+
+                                                                if (dailyAssKey.equalsIgnoreCase(currentDate)) {
+
+                                                                    Toast.makeText(DailySelfAssessmentActivity.this, "You already take this assessment!", Toast.LENGTH_SHORT).show();
+
+                                                                } else {
+
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(dailyAssKey).setValue(null);
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                                    setCheckboxToFalse();
+                                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                                    finish();
+
+                                                                }
+                                                            }
+
+                                                        } else {
+
+                                                            submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                            setCheckboxToFalse();
+                                                            startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                            finish();
+
+                                                        }
+
+                                                    }
 
                                                 }
 
@@ -223,10 +357,43 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
 
                                                 if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
-                                                    setCheckboxToFalse();
-                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
-                                                    finish();
+                                                    for (DataSnapshot dailySnap : userIdSnap.getChildren()) {
+
+                                                        String dailyKey = dailySnap.getKey();
+
+                                                        if (dailySnap.hasChild("Daily Self Assessment")) {
+
+                                                            for (DataSnapshot dailyAssSnap : dailySnap.getChildren()) {
+
+                                                                String dailyAssKey = dailyAssSnap.getKey();
+
+                                                                if (dailyAssKey.equalsIgnoreCase(currentDate)) {
+
+                                                                    Toast.makeText(DailySelfAssessmentActivity.this, "You already take this assessment!", Toast.LENGTH_SHORT).show();
+
+                                                                } else {
+
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(dailyAssKey).setValue(null);
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                                    setCheckboxToFalse();
+                                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                                    finish();
+
+                                                                }
+                                                            }
+
+                                                        } else {
+
+                                                            submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                            setCheckboxToFalse();
+                                                            startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                            finish();
+
+                                                        }
+
+
+
+                                                    }
 
                                                 }
 
@@ -246,21 +413,52 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
 
                                                 if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
-                                                    setCheckboxToFalse();
-                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
-                                                    finish();
+                                                    for (DataSnapshot dailySnap : userIdSnap.getChildren()) {
+
+                                                        String dailyKey = dailySnap.getKey();
+
+                                                        if (dailyKey.equalsIgnoreCase("Daily Self Assessment")) {
+
+                                                            for (DataSnapshot dailyAssSnap : dailySnap.getChildren()) {
+
+                                                                String dailyAssKey = dailyAssSnap.getKey();
+
+                                                                if (dailyAssKey.equalsIgnoreCase(currentDate)) {
+
+                                                                    Toast.makeText(DailySelfAssessmentActivity.this, "You already take this assessment!", Toast.LENGTH_SHORT).show();
+
+                                                                } else {
+
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(dailyAssKey).setValue(null);
+                                                                    submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                                    setCheckboxToFalse();
+                                                                    startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                                    finish();
+
+                                                                }
+                                                            }
+
+                                                        } else {
+
+                                                            submitDailyAssessmentReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Daily Self Assessment").child(currentDate).setValue(selfAssessmentHelper);
+                                                            setCheckboxToFalse();
+                                                            startActivity(new Intent(DailySelfAssessmentActivity.this, MonitorYourHealthActivity.class));
+                                                            finish();
+
+                                                        }
+
+
+
+                                                    }
 
                                                 }
 
                                             }
 
                                         }
-
                                     }
 
                                 }
-
                             }
                         });
 
@@ -282,7 +480,6 @@ public class DailySelfAssessmentActivity extends AppCompatActivity implements Co
                     }
                 });
             } else {
-                dsaSubmitBtn.setEnabled(false);
             }
 
         }
