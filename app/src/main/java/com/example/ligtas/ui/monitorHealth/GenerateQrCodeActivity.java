@@ -111,6 +111,8 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                         for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
+                            String userIDNumber = idNumberSnap.getKey();
+
                             for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
                                 String userIdKey = userIdSnap.getKey();
@@ -139,7 +141,7 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                                                             if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                qrCodeText = userIdKey + " " + condition + " " + currentDate;
+                                                                qrCodeText = userIDNumber + "=" + condition + "=" + currentDate + "=" + userTypeKey;
 
                                                                 MultiFormatWriter writer = new MultiFormatWriter();
 
@@ -184,6 +186,8 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                         for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
+                            String userIDNumber = idNumberSnap.getKey();
+
                             for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
                                 String userIdKey = userIdSnap.getKey();
@@ -212,7 +216,7 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                                                             if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                qrCodeText = userIdKey + " " + condition + " " + currentDate;
+                                                                qrCodeText = userIDNumber + "=" + condition + "=" + currentDate + "=" + userTypeKey;
 
                                                                 MultiFormatWriter writer = new MultiFormatWriter();
 
@@ -257,6 +261,8 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                         for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
+                            String userIDNumber = idNumberSnap.getKey();
+
                             for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
                                 String userIdKey = userIdSnap.getKey();
@@ -285,7 +291,7 @@ public class GenerateQrCodeActivity extends AppCompatActivity implements View.On
 
                                                             if (condition.equalsIgnoreCase("Good Condition")) {
 
-                                                                qrCodeText = userIdKey + " " + condition + " " + currentDate;
+                                                                qrCodeText = userIDNumber + "=" + condition + "=" + currentDate + "=" + userTypeKey;
 
                                                                 MultiFormatWriter writer = new MultiFormatWriter();
 

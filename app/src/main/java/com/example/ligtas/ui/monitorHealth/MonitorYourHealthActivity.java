@@ -204,7 +204,7 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                         MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
                                                                         alertDialogBuilder.setTitle("Health Status")
-                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -235,7 +235,8 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                                                         alertDialogBuilder.setTitle("Health Status")
                                                                                 .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
-                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                        "\nPlease have yourself checked first by medical health personnel as soon as possible." +
+                                                                                        "\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -248,7 +249,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                 });
 
                                                             }
-
 
 
                                                         }
@@ -351,7 +351,7 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                         MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
                                                                         alertDialogBuilder.setTitle("Health Status")
-                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -382,7 +382,8 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                                                         alertDialogBuilder.setTitle("Health Status")
                                                                                 .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
-                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                        "\nPlease have yourself checked first by medical health personnel as soon as possible." +
+                                                                                        "\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -395,7 +396,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                 });
 
                                                             }
-
 
 
                                                         }
@@ -498,7 +498,7 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                         MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(MonitorYourHealthActivity.this);
 
                                                                         alertDialogBuilder.setTitle("Health Status")
-                                                                                .setMessage("Please have yourself checked first by medical health personnel.")
+                                                                                .setMessage("Please have yourself checked first by medical health personnel.\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -529,7 +529,8 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
 
                                                                         alertDialogBuilder.setTitle("Health Status")
                                                                                 .setMessage("You are in a severe condition please stay at home, observe social distancing and follow health protocols." +
-                                                                                        "\n\nPlease have yourself checked first by medical health personnel as soon as possible.")
+                                                                                        "\nPlease have yourself checked first by medical health personnel as soon as possible." +
+                                                                                        "\n\nNote: QR-code will not be generated if you have mild condition.")
                                                                                 .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                                                                                     @Override
                                                                                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -542,7 +543,6 @@ public class MonitorYourHealthActivity extends AppCompatActivity implements View
                                                                 });
 
                                                             }
-
 
 
                                                         }

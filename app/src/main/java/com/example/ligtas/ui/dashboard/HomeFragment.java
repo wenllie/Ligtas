@@ -137,7 +137,7 @@ public class HomeFragment extends Fragment {
                 }
 
                 NewsfeedAdapter newsfeedAdapter = new NewsfeedAdapter(view.getContext(), newsfeedList);
-                newsfeedRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext(), LinearLayoutManager.VERTICAL, false));
+                newsfeedRecyclerView.setLayoutManager(new LinearLayoutManager(root.getContext(), LinearLayoutManager.VERTICAL, true));
                 newsfeedRecyclerView.setAdapter(newsfeedAdapter);
                 newsfeedAdapter.notifyDataSetChanged();
             }

@@ -6,7 +6,7 @@
     <shape
         android:innerRadiusRatio="2.5"
         android:shape="ring"
-        android:thickness="8dp"
+        android:thickness="18dp"
         android:useLevel="true">
 
         <gradient

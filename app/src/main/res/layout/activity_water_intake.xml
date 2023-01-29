@@ -38,100 +38,105 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
 
-            <View
-                android:layout_width="420dp"
-                android:layout_height="420dp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/ic_water_intake_round"
-                android:backgroundTint="?colorPrimary"
-                app:srcCompat="@drawable/ic_water_intake_round" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="20dp">
 
-            <ProgressBar
-                android:id="@+id/waterIntakeProgressBar"
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="290dp"
-                android:layout_height="290dp"
-                android:layout_centerInParent="true"
-                android:background="@drawable/circle_shape"
-                android:indeterminate="false"
-                android:progressDrawable="@drawable/circle_progress_bar"
-                android:textAlignment="center" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/waterIntakeProgressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_shape"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circle_progress_bar"
+                    android:textAlignment="center" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/aldrich"
+                        android:gravity="center"
+                        android:text="Daily Goal"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/waterIntakeProgressTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/aldrich"
+                        android:gravity="center"
+                        android:text="---"
+                        android:textSize="30sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/drinkWaterbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:fontFamily="@font/aldrich"
-                    android:gravity="center"
-                    android:text="Daily Goal"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:background="@drawable/main_rounded_button_primary_color"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Drink Water"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"/>
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/waterIntakeProgressTextView"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/waterIntakeGoalBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/aldrich"
-                    android:gravity="center"
-                    android:text="---"
-                    android:textSize="40sp" />
+                    android:layout_weight="1"
+                    android:background="@drawable/main_rounded_button_primary_color"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Set Goal"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textStyle="bold"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        </androidx.cardview.widget.CardView>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/drinkWaterbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/main_rounded_button_primary_color"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="5dp"
-                android:text="Drink Water"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textStyle="bold"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/waterIntakeGoalBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/main_rounded_button_primary_color"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="20dp"
-                android:text="Set Goal"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textStyle="bold"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

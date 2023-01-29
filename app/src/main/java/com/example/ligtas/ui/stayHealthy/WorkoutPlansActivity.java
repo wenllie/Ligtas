@@ -1,6 +1,7 @@
 package com.example.ligtas.ui.stayHealthy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.Intent;
@@ -8,10 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.ligtas.R;
+import com.example.ligtas.ui.settings.SettingsActivity;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
 public class WorkoutPlansActivity extends AppCompatActivity implements View.OnClickListener{
 
-    AppCompatImageView fromWPToStayHealthy;
+    AppCompatImageView fromWPToStayHealthy, aboutWorkOutPlanImageView;
+    AppCompatButton workoutBeginnerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +24,12 @@ public class WorkoutPlansActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_workout_plans);
 
         fromWPToStayHealthy = findViewById(R.id.fromWPToStayHealthy);
+        aboutWorkOutPlanImageView = findViewById(R.id.aboutWorkOutPlanImageView);
+        workoutBeginnerButton = findViewById(R.id.workoutBeginnerButton);
 
         fromWPToStayHealthy.setOnClickListener(this);
+        aboutWorkOutPlanImageView.setOnClickListener(this);
+        workoutBeginnerButton.setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +47,21 @@ public class WorkoutPlansActivity extends AppCompatActivity implements View.OnCl
 
             case R.id.fromWPToStayHealthy:
                 onBackPressed();
+                break;
+
+            case R.id.aboutWorkOutPlanImageView:
+                final DialogPlus about = DialogPlus.newDialog(WorkoutPlansActivity.this)
+                        .setContentHolder(new ViewHolder(R.layout.dialog_box_about_workout_plans))
+                        .setExpanded(true, 800)
+                        .setContentBackgroundResource(R.drawable.dialog_rounded_top)
+                        .create();
+
+                about.show();
+                break;
+
+            case R.id.workoutBeginnerButton:
+                startActivity(new Intent(WorkoutPlansActivity.this, BeginnerWorkoutActivity.class));
+                finish();
                 break;
 
         }

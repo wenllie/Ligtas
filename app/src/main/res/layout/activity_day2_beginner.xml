@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_blob_scatter_haikei"
+    android:orientation="vertical"
+    tools:context=".ui.stayHealthy.Day2BeginnerActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/day2BackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:tint="?colorSecondaryVariant" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/beginner_day2_ex1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex1_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest1_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex2_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest2_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex3_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest3_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex4_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest4_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex5_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest5_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex6_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex6_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest6_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest6_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex7_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_rest7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_rest7_layout" />
+
+    <include
+        android:id="@+id/beginner_day2_ex8_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/beginner_day2_ex8_layout" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

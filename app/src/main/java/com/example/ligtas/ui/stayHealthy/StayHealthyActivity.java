@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class StayHealthyActivity extends AppCompatActivity implements View.OnClickListener {
 
     AppCompatImageView fromStayHealthyToDashboard;
-    CardView waterIntakeTrackerCardView, dietPlansCardView, workoutPlansCardView;
+    CardView waterIntakeTrackerCardView, workoutPlansCardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +27,10 @@ public class StayHealthyActivity extends AppCompatActivity implements View.OnCli
 
         fromStayHealthyToDashboard = findViewById(R.id.fromStayHealthyToDashboard);
         waterIntakeTrackerCardView = findViewById(R.id.waterIntakeTrackerCardView);
-        dietPlansCardView = findViewById(R.id.dietPlansCardView);
         workoutPlansCardView = findViewById(R.id.workoutPlansCardView);
 
         fromStayHealthyToDashboard.setOnClickListener(this);
         waterIntakeTrackerCardView.setOnClickListener(this);
-        dietPlansCardView.setOnClickListener(this);
         workoutPlansCardView.setOnClickListener(this);
     }
 
@@ -51,11 +49,6 @@ public class StayHealthyActivity extends AppCompatActivity implements View.OnCli
 
             case R.id.waterIntakeTrackerCardView:
                 startActivity(new Intent(StayHealthyActivity.this, WaterIntakeActivity.class));
-                finish();
-                break;
-
-            case R.id.dietPlansCardView:
-                startActivity(new Intent(StayHealthyActivity.this, DietPlansActivity.class));
                 finish();
                 break;
 

@@ -21,6 +21,75 @@
             android:src="@drawable/ic_baseline_close_24"
             app:tint="?colorSecondaryVariant" />
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aboutWorkOutPlanImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/about_icon"
+                android:padding="8dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="40dp"
+        app:lottie_rawRes="@raw/exercise_boy"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="50dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/workoutBeginnerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beginner"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/blue_light"
+            android:background="@drawable/main_rounded_button_primary_color"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Intermediate"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:background="@drawable/main_rounded_button_primary_color"
+            android:backgroundTint="@color/blue_main"
+            android:layout_weight="1"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Advanced"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/blue_dark"
+            android:background="@drawable/main_rounded_button_primary_color"
+            android:layout_weight="1"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

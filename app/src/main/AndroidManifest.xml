@@ -23,6 +23,30 @@
         android:theme="@style/Theme.Ligtas"
         tools:targetApi="31">
         <activity
+            android:name=".ui.stayHealthy.Day7BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day6BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day5BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day4BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day3BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day2BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day1BeginnerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.BeginnerWorkoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.stayHealthy.DrinkWaterActivity"
             android:exported="false" />
         <activity
@@ -111,7 +135,6 @@
             android:resource="@array/preloaded_fonts" />
 
         <receiver android:name=".ui.stayHealthy.WaterIntakeNotificationPublisher" />
-        <receiver android:name=".ui.stayHealthy.HourlyReminderReceiver" />
     </application>
 
 </manifest>

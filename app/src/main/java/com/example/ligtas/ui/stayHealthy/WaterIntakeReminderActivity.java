@@ -65,6 +65,12 @@ public class WaterIntakeReminderActivity extends AppCompatActivity {
                         calendar.set(Calendar.SECOND, 0);
                         calendar.set(Calendar.MILLISECOND, 0);
 
+                        if (Calendar.getInstance().after(calendar)) {
+
+                            calendar.add(Calendar.DAY_OF_MONTH, 1);
+
+                        }
+
                     }
                 });
 
@@ -81,6 +87,7 @@ public class WaterIntakeReminderActivity extends AppCompatActivity {
 
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 Toast.makeText(WaterIntakeReminderActivity.this, "Notification alarm set!", Toast.LENGTH_SHORT).show();
+                onBackPressed();
 
             }
         });

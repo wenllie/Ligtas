@@ -158,6 +158,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                             Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                             Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                             toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -173,6 +174,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                     Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                     Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -220,6 +222,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                             Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                             Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                             toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -235,6 +238,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                     Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                     Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -282,6 +286,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                             waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                             Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                             Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                             toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -297,6 +302,7 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
                                                     waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
                                                     Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
                                                     Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
