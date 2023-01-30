@@ -76,104 +76,114 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                         if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                            for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                            for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                String dayKey = daySnap.getKey();
+                                                String typeKey = typeSnap.getKey();
 
-                                                if (dayKey.equalsIgnoreCase("Day 1")) {
+                                                if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                    for (DataSnapshot daySnap : typeSnap.getChildren()) {
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                        String dayKey = daySnap.getKey();
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        if (dayKey.equalsIgnoreCase("Day 1")) {
 
-                                                            checkboxBeginnerDay1.setVisibility(View.VISIBLE);
-                                                            day1BeginnerRelativeLayout.setEnabled(false);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 2")) {
+                                                                    checkboxBeginnerDay1.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 2")) {
 
-                                                            checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 3")) {
+                                                                    checkboxBeginnerDay2.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 3")) {
 
-                                                            checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 4")) {
+                                                                    checkboxBeginnerDay3.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 4")) {
 
-                                                            checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 5")) {
+                                                                    checkboxBeginnerDay4.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 5")) {
 
-                                                            checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 6")) {
+                                                                    checkboxBeginnerDay5.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 6")) {
 
-                                                            checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                                    checkboxBeginnerDay6.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 7")) {
 
-                                                            checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
+
+                                                                String snapsKey = snaps.getValue().toString();
+
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
+
+                                                                    checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+
+                                                                }
+
+                                                            }
 
                                                         }
 
@@ -213,103 +223,113 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                         if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                            for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                            for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                String dayKey = daySnap.getKey();
+                                                String typeKey = typeSnap.getKey();
 
-                                                if (dayKey.equalsIgnoreCase("Day 1")) {
+                                                if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                    for (DataSnapshot daySnap : typeSnap.getChildren()) {
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                        String dayKey = daySnap.getKey();
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        if (dayKey.equalsIgnoreCase("Day 1")) {
 
-                                                            checkboxBeginnerDay1.setVisibility(View.VISIBLE);
-                                                            day1BeginnerRelativeLayout.setEnabled(false);
-                                                        }
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                    }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 2")) {
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                    checkboxBeginnerDay1.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 2")) {
 
-                                                            checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 3")) {
+                                                                    checkboxBeginnerDay2.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 3")) {
 
-                                                            checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 4")) {
+                                                                    checkboxBeginnerDay3.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 4")) {
 
-                                                            checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 5")) {
+                                                                    checkboxBeginnerDay4.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 5")) {
 
-                                                            checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 6")) {
+                                                                    checkboxBeginnerDay5.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 6")) {
 
-                                                            checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                                    checkboxBeginnerDay6.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 7")) {
 
-                                                            checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
+
+                                                                String snapsKey = snaps.getValue().toString();
+
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
+
+                                                                    checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+
+                                                                }
+
+                                                            }
 
                                                         }
 
@@ -349,104 +369,114 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                         if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                            for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                            for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                String dayKey = daySnap.getKey();
+                                                String typeKey = typeSnap.getKey();
 
-                                                if (dayKey.equalsIgnoreCase("Day 1")) {
+                                                if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                    for (DataSnapshot daySnap : typeSnap.getChildren()) {
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                        String dayKey = daySnap.getKey();
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        if (dayKey.equalsIgnoreCase("Day 1")) {
 
-                                                            checkboxBeginnerDay1.setVisibility(View.VISIBLE);
-                                                            day1BeginnerRelativeLayout.setEnabled(false);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 2")) {
+                                                                    checkboxBeginnerDay1.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 2")) {
 
-                                                            checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 3")) {
+                                                                    checkboxBeginnerDay2.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 3")) {
 
-                                                            checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 4")) {
+                                                                    checkboxBeginnerDay3.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 4")) {
 
-                                                            checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 5")) {
+                                                                    checkboxBeginnerDay4.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 5")) {
 
-                                                            checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 6")) {
+                                                                    checkboxBeginnerDay5.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 6")) {
 
-                                                            checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
 
-                                                        }
+                                                                String snapsKey = snaps.getValue().toString();
 
-                                                    }
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
 
-                                                } else if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                                    checkboxBeginnerDay6.setVisibility(View.VISIBLE);
 
-                                                    for (DataSnapshot snaps : daySnap.getChildren()) {
+                                                                }
 
-                                                        String snapsKey = snaps.getValue().toString();
+                                                            }
 
-                                                        if (snapsKey.equalsIgnoreCase("Completed")) {
+                                                        } else if (dayKey.equalsIgnoreCase("Day 7")) {
 
-                                                            checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                            for (DataSnapshot snaps : daySnap.getChildren()) {
+
+                                                                String snapsKey = snaps.getValue().toString();
+
+                                                                if (snapsKey.equalsIgnoreCase("Completed")) {
+
+                                                                    checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+
+                                                                }
+
+                                                            }
 
                                                         }
 

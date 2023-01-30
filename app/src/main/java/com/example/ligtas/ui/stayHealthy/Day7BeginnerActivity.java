@@ -87,18 +87,27 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                                    for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                                    for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                        String dayKey = daySnap.getKey();
+                                                        String typeKey = typeSnap.getKey();
 
-                                                        if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                        if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                            Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
+                                                            for (DataSnapshot daySnap : typeSnap.getChildren()) {
+
+                                                                String dayKey = daySnap.getKey();
+
+                                                                if (dayKey.equalsIgnoreCase("Day 7")) {
+
+                                                                    Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
 
 
-                                                        } else {
+                                                                } else {
 
 
+                                                                }
+
+                                                            }
 
                                                         }
 
@@ -106,7 +115,7 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 } else {
 
-                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Day 7").child("Result").setValue("Completed");
+                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Beginner").child("Day 7").child("Result").setValue("Completed");
                                                     Intent toStayHealthy = new Intent(Day7BeginnerActivity.this, BeginnerWorkoutActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -140,18 +149,27 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                                    for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                                    for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                        String dayKey = daySnap.getKey();
+                                                        String typeKey = typeSnap.getKey();
 
-                                                        if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                        if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                            Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
+                                                            for (DataSnapshot daySnap : typeSnap.getChildren()) {
+
+                                                                String dayKey = daySnap.getKey();
+
+                                                                if (dayKey.equalsIgnoreCase("Day 7")) {
+
+                                                                    Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
 
 
-                                                        } else {
+                                                                } else {
 
 
+                                                                }
+
+                                                            }
 
                                                         }
 
@@ -159,7 +177,7 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 } else {
 
-                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Day 7").child("Result").setValue("Completed");
+                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Beginner").child("Day 7").child("Result").setValue("Completed");
                                                     Intent toStayHealthy = new Intent(Day7BeginnerActivity.this, BeginnerWorkoutActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -193,18 +211,27 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 if (workoutkey.equalsIgnoreCase("Workouts")) {
 
-                                                    for (DataSnapshot daySnap : workoutSnap.getChildren()) {
+                                                    for (DataSnapshot typeSnap : workoutSnap.getChildren()) {
 
-                                                        String dayKey = daySnap.getKey();
+                                                        String typeKey = typeSnap.getKey();
 
-                                                        if (dayKey.equalsIgnoreCase("Day 7")) {
+                                                        if (typeKey.equalsIgnoreCase("Beginner")) {
 
-                                                            Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
+                                                            for (DataSnapshot daySnap : typeSnap.getChildren()) {
+
+                                                                String dayKey = daySnap.getKey();
+
+                                                                if (dayKey.equalsIgnoreCase("Day 7")) {
+
+                                                                    Toast.makeText(Day7BeginnerActivity.this, "You're already done for day 7!", Toast.LENGTH_SHORT).show();
 
 
-                                                        } else {
+                                                                } else {
 
 
+                                                                }
+
+                                                            }
 
                                                         }
 
@@ -212,7 +239,7 @@ public class Day7BeginnerActivity extends AppCompatActivity implements View.OnCl
 
                                                 } else {
 
-                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Day 7").child("Result").setValue("Completed");
+                                                    workoutReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Workouts").child("Beginner").child("Day 7").child("Result").setValue("Completed");
                                                     Intent toStayHealthy = new Intent(Day7BeginnerActivity.this, BeginnerWorkoutActivity.class);
                                                     toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                                     toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
