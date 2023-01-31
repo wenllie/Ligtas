@@ -113,6 +113,15 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
         day2Rest5FinishButton = findViewById(R.id.day2Rest5FinishButton);
         day2Rest6FinishButton = findViewById(R.id.day2Rest6FinishButton);
         day2Rest7FinishButton = findViewById(R.id.day2Rest7FinishButton);
+        
+        Glide.with(this).load(R.drawable.reverse_lunges_exercise).into(beginner_day2_ex1_photo);
+        Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex2_photo);
+        Glide.with(this).load(R.drawable.high_knees_exercise).into(beginner_day2_ex3_photo);
+        Glide.with(this).load(R.drawable.side_lunges_exercise).into(beginner_day2_ex4_photo);
+        Glide.with(this).load(R.drawable.side_step_squats_exercise).into(beginner_day2_ex5_photo);
+        Glide.with(this).load(R.drawable.forward_to_reverse_lunges_exercise).into(beginner_day2_ex6_photo);
+        Glide.with(this).load(R.drawable.jump_squats).into(beginner_day2_ex7_photo);
+        Glide.with(this).load(R.drawable.jumping_lunges).into(beginner_day2_ex8_photo);
 
 
         day2BackButton.setOnClickListener(this);
@@ -189,7 +198,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
                 day2Ex1StartButton.setVisibility(View.GONE);
                 day2Ex1NextButton.setVisibility(View.VISIBLE);
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex1_photo);
                 break;
 
             case R.id.day2Ex1NextButton:
@@ -202,8 +210,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex2_photo);
                 break;
 
             case R.id.day2Rest1StartButton:
@@ -255,8 +261,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex3_photo);
                 break;
 
             case R.id.day2Rest2StartButton:
@@ -308,8 +312,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex4_photo);
                 break;
 
             case R.id.day2Rest3StartButton:
@@ -361,8 +363,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex5_photo);
                 break;
 
             case R.id.day2Rest4StartButton:
@@ -414,8 +414,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex6_photo);
                 break;
 
             case R.id.day2Rest5StartButton:
@@ -467,8 +465,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex7_photo);
                 break;
 
             case R.id.day2Rest6StartButton:
@@ -520,8 +516,6 @@ public class Day2BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day2_ex6_layout.setVisibility(View.GONE);
                 beginner_day2_ex7_layout.setVisibility(View.GONE);
                 beginner_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day2_ex8_photo);
                 break;
 
             case R.id.day2Rest7StartButton:

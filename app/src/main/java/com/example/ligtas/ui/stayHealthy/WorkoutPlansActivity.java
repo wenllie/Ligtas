@@ -16,7 +16,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 public class WorkoutPlansActivity extends AppCompatActivity implements View.OnClickListener{
 
     AppCompatImageView fromWPToStayHealthy, aboutWorkOutPlanImageView;
-    AppCompatButton workoutBeginnerButton, workoutIntermediateButton;
+    AppCompatButton workoutBeginnerButton, workoutIntermediateButton, workoutAdvancedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +27,13 @@ public class WorkoutPlansActivity extends AppCompatActivity implements View.OnCl
         aboutWorkOutPlanImageView = findViewById(R.id.aboutWorkOutPlanImageView);
         workoutBeginnerButton = findViewById(R.id.workoutBeginnerButton);
         workoutIntermediateButton = findViewById(R.id.workoutIntermediateButton);
+        workoutAdvancedButton = findViewById(R.id.workoutAdvancedButton);
 
         fromWPToStayHealthy.setOnClickListener(this);
         aboutWorkOutPlanImageView.setOnClickListener(this);
         workoutBeginnerButton.setOnClickListener(this);
         workoutIntermediateButton.setOnClickListener(this);
+        workoutAdvancedButton.setOnClickListener(this);
     }
 
     @Override
@@ -68,6 +70,11 @@ public class WorkoutPlansActivity extends AppCompatActivity implements View.OnCl
 
             case R.id.workoutIntermediateButton:
                 startActivity(new Intent(WorkoutPlansActivity.this, IntermediateWorkoutActivity.class));
+                finish();
+                break;
+
+            case R.id.workoutAdvancedButton:
+                startActivity(new Intent(WorkoutPlansActivity.this, AdvancedWorkoutActivity.class));
                 finish();
                 break;
 

@@ -29,21 +29,29 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/drawable/unchecked_checkbox_bg.xml" value="0.136" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_address_and_health_info.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_address_info.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_advanced_workout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_beginner_workout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_change_password.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_daily_self_assessment.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day1_advanced.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day1_beginner.xml" value="0.3484375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day1_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day2_advanced.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day2_beginner.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day2_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day3_advanced.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day3_beginner.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day3_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day4_advanced.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day4_beginner.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day4_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day5_advanced.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day5_beginner.xml" value="0.3484375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day5_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day6_advanced.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day6_beginner.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day6_intermediate.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day7_advanced.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day7_beginner.xml" value="0.3484375" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_day7_intermediate.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_diet_plans.xml" value="0.3484375" />
@@ -71,6 +79,89 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_water_intake_reminder.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_welcome.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/activity_workout_plans.xml" value="0.3484375" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex10_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_ex9_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest4_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest7_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day1_rest9_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_ex8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day2_rest7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_ex9_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest5_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest6_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest7_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day3_rest8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_ex9_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest3_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day5_rest8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex7_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_ex8_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/advanced_day6_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/app_bar_user_navigation.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day1_ex10_layout.xml" value="0.3614583333333333" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day1_ex1_layout.xml" value="0.1762917933130699" />
@@ -118,6 +209,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_ex8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_ex9_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day3_rest8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day4_ex1_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex1_layout.xml" value="0.3625" />
@@ -129,6 +226,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex8_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex9_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_rest8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day6_ex1_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day6_ex2_layout.xml" value="0.3625" />
@@ -200,6 +303,11 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_ex7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_ex8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest6_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day2_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_ex1_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_ex2_layout.xml" value="0.3625" />
@@ -211,6 +319,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_ex8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_ex9_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day3_rest8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_ex1_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_ex2_layout.xml" value="0.3625" />
@@ -222,6 +336,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_ex8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_ex9_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest3_layout.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest6_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day5_rest8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_ex1_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_ex2_layout.xml" value="0.3625" />
@@ -232,6 +352,11 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_ex7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_ex8_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest1_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest2_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest3_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest4_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest5_layout.xml" value="0.3625" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest6_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/intermediate_day6_rest7_layout.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/nav_header_user_navigation.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/newsfeed_slider_image.xml" value="0.3614583333333333" />

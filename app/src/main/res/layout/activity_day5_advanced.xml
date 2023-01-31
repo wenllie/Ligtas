@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_blob_scatter_haikei"
+    android:orientation="vertical"
+    tools:context=".ui.stayHealthy.Day5AdvancedActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/day5AdvancedBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_close_24"
+            app:tint="?colorSecondaryVariant" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <include
+        android:id="@+id/advanced_day5_ex1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex1_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest1_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest1_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex2_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest2_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex3_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest3_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest3_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex4_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest4_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest4_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex5_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest5_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest5_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex6_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex6_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest6_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest6_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex7_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest7_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest7_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex8_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex8_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_rest8_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_rest8_layout" />
+
+    <include
+        android:id="@+id/advanced_day5_ex9_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/advanced_day5_ex9_layout" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

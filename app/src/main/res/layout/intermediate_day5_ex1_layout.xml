@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn="@layout/activity_day5_Intermediate">
+    tools:showIn="@layout/activity_day5_intermediate">
 
     <RelativeLayout
         android:layout_width="match_parent"

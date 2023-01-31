@@ -116,6 +116,15 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
         day2Rest6IntermediateFinishButton = findViewById(R.id.day2Rest6IntermediateFinishButton);
         day2Rest7IntermediateFinishButton = findViewById(R.id.day2Rest7IntermediateFinishButton);
 
+        Glide.with(this).load(R.drawable.reverse_lunges_exercise).into(intermediate_day2_ex1_photo);
+        Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex2_photo);
+        Glide.with(this).load(R.drawable.high_knees_exercise).into(intermediate_day2_ex3_photo);
+        Glide.with(this).load(R.drawable.side_lunges_exercise).into(intermediate_day2_ex4_photo);
+        Glide.with(this).load(R.drawable.side_step_squats_exercise).into(intermediate_day2_ex5_photo);
+        Glide.with(this).load(R.drawable.forward_to_reverse_lunges_exercise).into(intermediate_day2_ex6_photo);
+        Glide.with(this).load(R.drawable.jump_squats).into(intermediate_day2_ex7_photo);
+        Glide.with(this).load(R.drawable.jumping_lunges).into(intermediate_day2_ex8_photo);
+
 
         day2IntermediateBackButton.setOnClickListener(this);
 
@@ -192,7 +201,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
                 day2Ex1IntermediateStartButton.setVisibility(View.GONE);
                 day2Ex1IntermediateNextButton.setVisibility(View.VISIBLE);
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex1_photo);
                 break;
 
             case R.id.day2Ex1IntermediateNextButton:
@@ -205,8 +213,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex2_photo);
                 break;
 
             case R.id.day2Rest1IntermediateStartButton:
@@ -258,8 +264,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex3_photo);
                 break;
 
             case R.id.day2Rest2IntermediateStartButton:
@@ -311,8 +315,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex4_photo);
                 break;
 
             case R.id.day2Rest3IntermediateStartButton:
@@ -364,8 +366,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex5_photo);
                 break;
 
             case R.id.day2Rest4IntermediateStartButton:
@@ -417,8 +417,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex6_photo);
                 break;
 
             case R.id.day2Rest5IntermediateStartButton:
@@ -470,8 +468,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex7_photo);
                 break;
 
             case R.id.day2Rest6IntermediateStartButton:
@@ -523,8 +519,6 @@ public class Day2IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day2_ex6_layout.setVisibility(View.GONE);
                 intermediate_day2_ex7_layout.setVisibility(View.GONE);
                 intermediate_day2_ex8_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day2_ex8_photo);
                 break;
 
             case R.id.day2Rest7IntermediateStartButton:

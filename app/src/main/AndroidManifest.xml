@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.ligtas" >
+    package="com.example.ligtas">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,7 +21,31 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ligtas"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.stayHealthy.Day7AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day6AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day5AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day4AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day3AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day2AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.Day1AdvancedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.stayHealthy.AdvancedWorkoutActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.stayHealthy.Day7IntermediateActivity"
             android:exported="false" />
@@ -108,7 +132,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

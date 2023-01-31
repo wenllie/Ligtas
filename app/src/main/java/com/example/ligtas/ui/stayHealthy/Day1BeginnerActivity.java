@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -23,6 +25,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Day1BeginnerActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,6 +46,9 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
     AppCompatButton day1Rest5StartButton, day1Rest6StartButton, day1Rest7StartButton, day1Rest8StartButton, day1Rest9StartButton;
     AppCompatButton day1Rest1FinishButton, day1Rest2FinishButton, day1Rest3FinishButton, day1Rest4FinishButton;
     AppCompatButton day1Rest5FinishButton, day1Rest6FinishButton, day1Rest7FinishButton, day1Rest8FinishButton, day1Rest9FinishButton;
+    AppCompatTextView timer_beginner_day1_ex2, timer_beginner_day1_ex4, timer_beginner_day1_ex5, timer_beginner_day1_ex6, timer_beginner_day1_ex8, timer_beginner_day1_ex9;
+    AppCompatTextView timer_beginner_day1_rest1, timer_beginner_day1_rest2, timer_beginner_day1_rest3, timer_beginner_day1_rest4;
+    AppCompatTextView timer_beginner_day1_rest5, timer_beginner_day1_rest6, timer_beginner_day1_rest7, timer_beginner_day1_rest8, timer_beginner_day1_rest9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +142,35 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
         beginner_day1_ex9_photo = findViewById(R.id.beginner_day1_ex9_photo);
         beginner_day1_ex10_photo = findViewById(R.id.beginner_day1_ex10_photo);
 
+        timer_beginner_day1_ex2 = findViewById(R.id.timer_beginner_day1_ex2);
+        timer_beginner_day1_ex4 = findViewById(R.id.timer_beginner_day1_ex4);
+        timer_beginner_day1_ex5 = findViewById(R.id.timer_beginner_day1_ex5);
+        timer_beginner_day1_ex6 = findViewById(R.id.timer_beginner_day1_ex6);
+        timer_beginner_day1_ex8 = findViewById(R.id.timer_beginner_day1_ex8);
+        timer_beginner_day1_ex9 = findViewById(R.id.timer_beginner_day1_ex9);
+
+        timer_beginner_day1_rest1 = findViewById(R.id.timer_beginner_day1_rest1);
+        timer_beginner_day1_rest2 = findViewById(R.id.timer_beginner_day1_rest2);
+        timer_beginner_day1_rest3 = findViewById(R.id.timer_beginner_day1_rest3);
+        timer_beginner_day1_rest4 = findViewById(R.id.timer_beginner_day1_rest4);
+        timer_beginner_day1_rest5 = findViewById(R.id.timer_beginner_day1_rest5);
+        timer_beginner_day1_rest6 = findViewById(R.id.timer_beginner_day1_rest6);
+        timer_beginner_day1_rest7 = findViewById(R.id.timer_beginner_day1_rest7);
+        timer_beginner_day1_rest8 = findViewById(R.id.timer_beginner_day1_rest8);
+        timer_beginner_day1_rest9 = findViewById(R.id.timer_beginner_day1_rest9);
+
+
+        Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex1_photo);
+        Glide.with(this).load(R.drawable.high_knees_exercise).into(beginner_day1_ex2_photo);
+        Glide.with(this).load(R.drawable.reverse_lunges_exercise).into(beginner_day1_ex3_photo);
+        Glide.with(this).load(R.drawable.plank_jacks_exercise).into(beginner_day1_ex4_photo);
+        Glide.with(this).load(R.drawable.skater_hops_exercise).into(beginner_day1_ex5_photo);
+        Glide.with(this).load(R.drawable.side_lunges_exercise).into(beginner_day1_ex6_photo);
+        Glide.with(this).load(R.drawable.push_ups).into(beginner_day1_ex7_photo);
+        Glide.with(this).load(R.drawable.bicycle_crunches).into(beginner_day1_ex8_photo);
+        Glide.with(this).load(R.drawable.mountain_climbers).into(beginner_day1_ex9_photo);
+        Glide.with(this).load(R.drawable.donkey_kicks_exercise).into(beginner_day1_ex10_photo);
+
 
         day1BackButton.setOnClickListener(this);
 
@@ -220,7 +257,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex1_photo);
                 day1Ex1StartButton.setVisibility(View.GONE);
                 day1Ex1NextButton.setVisibility(View.VISIBLE);
                 break;
@@ -236,8 +272,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex2_photo);
                 break;
 
             case R.id.day1Rest1StartButton:
@@ -253,7 +287,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest1StartButton.setVisibility(View.GONE);
-                day1Rest1FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest1.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest1.setText("00:00");
+                        day1Rest1FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest1FinishButton:
@@ -282,7 +331,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex2StartButton.setVisibility(View.GONE);
-                day1Ex2NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex2.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex2.setText("00:00");
+                        day1Ex2NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex2NextButton:
@@ -297,8 +361,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex3_photo);
                 break;
 
             case R.id.day1Rest2StartButton:
@@ -314,7 +376,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest2StartButton.setVisibility(View.GONE);
-                day1Rest2FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest2.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest2.setText("00:00");
+                        day1Rest2FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest2FinishButton:
@@ -358,8 +435,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex4_photo);
                 break;
 
             case R.id.day1Rest3StartButton:
@@ -375,7 +450,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest3StartButton.setVisibility(View.GONE);
-                day1Rest3FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest3.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest3.setText("00:00");
+                        day1Rest3FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest3FinishButton:
@@ -404,7 +494,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex4StartButton.setVisibility(View.GONE);
-                day1Ex4NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex4.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex4.setText("00:00");
+                        day1Ex4NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex4NextButton:
@@ -419,8 +524,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex5_photo);
                 break;
 
             case R.id.day1Rest4StartButton:
@@ -436,7 +539,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest4StartButton.setVisibility(View.GONE);
-                day1Rest4FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest4.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest4.setText("00:00");
+                        day1Rest4FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest4FinishButton:
@@ -465,7 +583,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex5StartButton.setVisibility(View.GONE);
-                day1Ex5NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex5.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex5.setText("00:00");
+                        day1Ex5NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex5NextButton:
@@ -480,8 +613,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex6_photo);
                 break;
 
             case R.id.day1Rest5StartButton:
@@ -497,7 +628,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest5StartButton.setVisibility(View.GONE);
-                day1Rest5FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest5.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest5.setText("00:00");
+                        day1Rest5FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest5FinishButton:
@@ -526,7 +672,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex6StartButton.setVisibility(View.GONE);
-                day1Ex6NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex6.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex6.setText("00:00");
+                        day1Ex6NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex6NextButton:
@@ -541,8 +702,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex7_photo);
                 break;
 
             case R.id.day1Rest6StartButton:
@@ -558,7 +717,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest6StartButton.setVisibility(View.GONE);
-                day1Rest6FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest6.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest6.setText("00:00");
+                        day1Rest6FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest6FinishButton:
@@ -602,8 +776,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex8_photo);
                 break;
 
             case R.id.day1Rest7StartButton:
@@ -619,7 +791,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest7StartButton.setVisibility(View.GONE);
-                day1Rest7FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest7.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest7.setText("00:00");
+                        day1Rest7FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest7FinishButton:
@@ -648,7 +835,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex8StartButton.setVisibility(View.GONE);
-                day1Ex8NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex8.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex8.setText("00:00");
+                        day1Ex8NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex8NextButton:
@@ -663,8 +865,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex9_photo);
                 break;
 
             case R.id.day1Rest8StartButton:
@@ -680,7 +880,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest8StartButton.setVisibility(View.GONE);
-                day1Rest8FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest8.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest8.setText("00:00");
+                        day1Rest8FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest8FinishButton:
@@ -709,7 +924,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex9StartButton.setVisibility(View.GONE);
-                day1Ex9NextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_ex9.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_ex9.setText("00:00");
+                        day1Ex9NextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Ex9NextButton:
@@ -724,8 +954,6 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex8_layout.setVisibility(View.GONE);
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(beginner_day1_ex10_photo);
                 break;
 
             case R.id.day1Rest9StartButton:
@@ -741,7 +969,22 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 beginner_day1_ex9_layout.setVisibility(View.GONE);
                 beginner_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest9StartButton.setVisibility(View.GONE);
-                day1Rest9FinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_beginner_day1_rest9.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_beginner_day1_rest9.setText("00:00");
+                        day1Rest9FinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest9FinishButton:

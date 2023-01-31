@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -21,6 +23,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Day1IntermediateActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -41,6 +46,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
     AppCompatButton day1Rest5IntermediateStartButton, day1Rest6IntermediateStartButton, day1Rest7IntermediateStartButton, day1Rest8IntermediateStartButton, day1Rest9IntermediateStartButton;
     AppCompatButton day1Rest1IntermediateFinishButton, day1Rest2IntermediateFinishButton, day1Rest3IntermediateFinishButton, day1Rest4IntermediateFinishButton;
     AppCompatButton day1Rest5IntermediateFinishButton, day1Rest6IntermediateFinishButton, day1Rest7IntermediateFinishButton, day1Rest8IntermediateFinishButton, day1Rest9IntermediateFinishButton;
+    AppCompatTextView timer_intermediate_day1_ex2, timer_intermediate_day1_ex4, timer_intermediate_day1_ex5, timer_intermediate_day1_ex6, timer_intermediate_day1_ex8, timer_intermediate_day1_ex9;
+    AppCompatTextView timer_intermediate_day1_rest1, timer_intermediate_day1_rest2, timer_intermediate_day1_rest3, timer_intermediate_day1_rest4;
+    AppCompatTextView timer_intermediate_day1_rest5, timer_intermediate_day1_rest6, timer_intermediate_day1_rest7, timer_intermediate_day1_rest8, timer_intermediate_day1_rest9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +141,34 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
         intermediate_day1_ex8_photo = findViewById(R.id.intermediate_day1_ex8_photo);
         intermediate_day1_ex9_photo = findViewById(R.id.intermediate_day1_ex9_photo);
         intermediate_day1_ex10_photo = findViewById(R.id.intermediate_day1_ex10_photo);
+
+        timer_intermediate_day1_ex2 = findViewById(R.id.timer_intermediate_day1_ex2);
+        timer_intermediate_day1_ex4 = findViewById(R.id.timer_intermediate_day1_ex4);
+        timer_intermediate_day1_ex5 = findViewById(R.id.timer_intermediate_day1_ex5);
+        timer_intermediate_day1_ex6 = findViewById(R.id.timer_intermediate_day1_ex6);
+        timer_intermediate_day1_ex8 = findViewById(R.id.timer_intermediate_day1_ex8);
+        timer_intermediate_day1_ex9 = findViewById(R.id.timer_intermediate_day1_ex9);
+
+        timer_intermediate_day1_rest1 = findViewById(R.id.timer_intermediate_day1_rest1);
+        timer_intermediate_day1_rest2 = findViewById(R.id.timer_intermediate_day1_rest2);
+        timer_intermediate_day1_rest3 = findViewById(R.id.timer_intermediate_day1_rest3);
+        timer_intermediate_day1_rest4 = findViewById(R.id.timer_intermediate_day1_rest4);
+        timer_intermediate_day1_rest5 = findViewById(R.id.timer_intermediate_day1_rest5);
+        timer_intermediate_day1_rest6 = findViewById(R.id.timer_intermediate_day1_rest6);
+        timer_intermediate_day1_rest7 = findViewById(R.id.timer_intermediate_day1_rest7);
+        timer_intermediate_day1_rest8 = findViewById(R.id.timer_intermediate_day1_rest8);
+        timer_intermediate_day1_rest9 = findViewById(R.id.timer_intermediate_day1_rest9);
+
+        Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex1_photo);
+        Glide.with(this).load(R.drawable.high_knees_exercise).into(intermediate_day1_ex2_photo);
+        Glide.with(this).load(R.drawable.reverse_lunges_exercise).into(intermediate_day1_ex3_photo);
+        Glide.with(this).load(R.drawable.plank_jacks_exercise).into(intermediate_day1_ex4_photo);
+        Glide.with(this).load(R.drawable.skater_hops_exercise).into(intermediate_day1_ex5_photo);
+        Glide.with(this).load(R.drawable.side_lunges_exercise).into(intermediate_day1_ex6_photo);
+        Glide.with(this).load(R.drawable.push_ups).into(intermediate_day1_ex7_photo);
+        Glide.with(this).load(R.drawable.bicycle_crunches).into(intermediate_day1_ex8_photo);
+        Glide.with(this).load(R.drawable.mountain_climbers).into(intermediate_day1_ex9_photo);
+        Glide.with(this).load(R.drawable.donkey_kicks_exercise).into(intermediate_day1_ex10_photo);
 
 
         day1IntermediateBackButton.setOnClickListener(this);
@@ -240,7 +276,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex2_photo);
                 break;
 
-            case R.id.day1Rest1IntermediateStartButton:
+            case R.id.day1Rest1StartButton:
                 intermediate_day1_rest1_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -253,10 +289,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest1IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest1IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest1.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest1.setText("00:00");
+                        day1Rest1IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest1IntermediateFinishButton:
+            case R.id.day1Rest1FinishButton:
                 intermediate_day1_rest1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.VISIBLE);
@@ -270,7 +321,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex2IntermediateStartButton:
+            case R.id.day1Ex2StartButton:
                 intermediate_day1_ex2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex3_layout.setVisibility(View.GONE);
@@ -282,10 +333,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex2IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex2IntermediateNextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex2.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex2.setText("00:00");
+                        day1Ex2IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Ex2IntermediateNextButton:
+            case R.id.day1Ex2NextButton:
                 intermediate_day1_rest2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -297,11 +363,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex3_photo);
                 break;
 
-            case R.id.day1Rest2IntermediateStartButton:
+            case R.id.day1Rest2StartButton:
                 intermediate_day1_rest2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -314,10 +378,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest2IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest2IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest2.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest2.setText("00:00");
+                        day1Rest2IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest2IntermediateFinishButton:
+            case R.id.day1Rest2FinishButton:
                 intermediate_day1_rest2_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -331,7 +410,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex3IntermediateStartButton:
+            case R.id.day1Ex3StartButton:
                 intermediate_day1_ex3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -346,7 +425,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 day1Ex3IntermediateNextButton.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.day1Ex3IntermediateNextButton:
+            case R.id.day1Ex3NextButton:
                 intermediate_day1_rest3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -358,11 +437,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex4_photo);
                 break;
 
-            case R.id.day1Rest3IntermediateStartButton:
+            case R.id.day1Rest3StartButton:
                 intermediate_day1_rest3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -375,10 +452,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest3IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest3IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest3.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest3.setText("00:00");
+                        day1Rest3IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest3IntermediateFinishButton:
+            case R.id.day1Rest3FinishButton:
                 intermediate_day1_rest3_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -392,7 +484,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex4IntermediateStartButton:
+            case R.id.day1Ex4StartButton:
                 intermediate_day1_ex4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -404,10 +496,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex4IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex4IntermediateNextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex4.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex4.setText("00:00");
+                        day1Ex4IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Ex4IntermediateNextButton:
+            case R.id.day1Ex4NextButton:
                 intermediate_day1_rest4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -419,11 +526,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex5_photo);
                 break;
 
-            case R.id.day1Rest4IntermediateStartButton:
+            case R.id.day1Rest4StartButton:
                 intermediate_day1_rest4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -436,10 +541,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest4IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest4IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest4.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest4.setText("00:00");
+                        day1Rest4IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest4IntermediateFinishButton:
+            case R.id.day1Rest4FinishButton:
                 intermediate_day1_rest4_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -453,7 +573,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex5IntermediateStartButton:
+            case R.id.day1Ex5StartButton:
                 intermediate_day1_ex5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -465,10 +585,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex5IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex5IntermediateNextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex5.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex5.setText("00:00");
+                        day1Ex5IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Ex5IntermediateNextButton:
+            case R.id.day1Ex5NextButton:
                 intermediate_day1_rest5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -480,11 +615,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex6_photo);
                 break;
 
-            case R.id.day1Rest5IntermediateStartButton:
+            case R.id.day1Rest5StartButton:
                 intermediate_day1_rest5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -497,10 +630,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest5IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest5IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest5.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest5.setText("00:00");
+                        day1Rest5IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest5IntermediateFinishButton:
+            case R.id.day1Rest5FinishButton:
                 intermediate_day1_rest5_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -514,7 +662,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex6IntermediateStartButton:
+            case R.id.day1Ex6StartButton:
                 intermediate_day1_ex6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -526,10 +674,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex6IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex6IntermediateNextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex6.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex6.setText("00:00");
+                        day1Ex6IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Ex6IntermediateNextButton:
+            case R.id.day1Ex6NextButton:
                 intermediate_day1_rest6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -541,11 +704,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex7_photo);
                 break;
 
-            case R.id.day1Rest6IntermediateStartButton:
+            case R.id.day1Rest6StartButton:
                 intermediate_day1_rest6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -558,10 +719,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest6IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest6IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest6.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest6.setText("00:00");
+                        day1Rest6IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest6IntermediateFinishButton:
+            case R.id.day1Rest6FinishButton:
                 intermediate_day1_rest6_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -575,7 +751,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex7IntermediateStartButton:
+            case R.id.day1Ex7StartButton:
                 intermediate_day1_ex7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -590,7 +766,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 day1Ex7IntermediateNextButton.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.day1Ex7IntermediateNextButton:
+            case R.id.day1Ex7NextButton:
                 intermediate_day1_rest7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -602,11 +778,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex8_photo);
                 break;
 
-            case R.id.day1Rest7IntermediateStartButton:
+            case R.id.day1Rest7StartButton:
                 intermediate_day1_rest7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -619,10 +793,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest7IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest7IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest7.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest7.setText("00:00");
+                        day1Rest7IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest7IntermediateFinishButton:
+            case R.id.day1Rest7FinishButton:
                 intermediate_day1_rest7_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -636,7 +825,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex8IntermediateStartButton:
+            case R.id.day1Ex8StartButton:
                 intermediate_day1_ex8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -648,10 +837,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex8IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex8IntermediateNextButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex8.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex8.setText("00:00");
+                        day1Ex8IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Ex8IntermediateNextButton:
+            case R.id.day1Ex8NextButton:
                 intermediate_day1_rest8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -663,11 +867,9 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
-
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex9_photo);
                 break;
 
-            case R.id.day1Rest8IntermediateStartButton:
+            case R.id.day1Rest8StartButton:
                 intermediate_day1_rest8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -680,10 +882,25 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex9_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Rest8IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest8IntermediateFinishButton.setVisibility(View.VISIBLE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest8.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest8.setText("00:00");
+                        day1Rest8IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
-            case R.id.day1Rest8IntermediateFinishButton:
+            case R.id.day1Rest8FinishButton:
                 intermediate_day1_rest8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -697,7 +914,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex9IntermediateStartButton:
+            case R.id.day1Ex9StartButton:
                 intermediate_day1_ex9_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -709,39 +926,22 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex9IntermediateStartButton.setVisibility(View.GONE);
-                day1Ex9IntermediateNextButton.setVisibility(View.VISIBLE);
-                break;
+                new CountDownTimer(21000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_ex9.setText(f.format(min) + ":" + f.format(sec));
 
-            case R.id.day1Ex9IntermediateNextButton:
-                intermediate_day1_rest9_layout.setVisibility(View.VISIBLE);
-                intermediate_day1_ex1_layout.setVisibility(View.GONE);
-                intermediate_day1_ex2_layout.setVisibility(View.GONE);
-                intermediate_day1_ex3_layout.setVisibility(View.GONE);
-                intermediate_day1_ex4_layout.setVisibility(View.GONE);
-                intermediate_day1_ex5_layout.setVisibility(View.GONE);
-                intermediate_day1_ex6_layout.setVisibility(View.GONE);
-                intermediate_day1_ex7_layout.setVisibility(View.GONE);
-                intermediate_day1_ex8_layout.setVisibility(View.GONE);
-                intermediate_day1_ex9_layout.setVisibility(View.GONE);
-                intermediate_day1_ex10_layout.setVisibility(View.GONE);
+                    }
 
-                Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex10_photo);
-                break;
-
-            case R.id.day1Rest9IntermediateStartButton:
-                intermediate_day1_rest9_layout.setVisibility(View.VISIBLE);
-                intermediate_day1_ex1_layout.setVisibility(View.GONE);
-                intermediate_day1_ex2_layout.setVisibility(View.GONE);
-                intermediate_day1_ex3_layout.setVisibility(View.GONE);
-                intermediate_day1_ex4_layout.setVisibility(View.GONE);
-                intermediate_day1_ex5_layout.setVisibility(View.GONE);
-                intermediate_day1_ex6_layout.setVisibility(View.GONE);
-                intermediate_day1_ex7_layout.setVisibility(View.GONE);
-                intermediate_day1_ex8_layout.setVisibility(View.GONE);
-                intermediate_day1_ex9_layout.setVisibility(View.GONE);
-                intermediate_day1_ex10_layout.setVisibility(View.GONE);
-                day1Rest9IntermediateStartButton.setVisibility(View.GONE);
-                day1Rest9IntermediateFinishButton.setVisibility(View.VISIBLE);
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_ex9.setText("00:00");
+                        day1Ex9IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
                 break;
 
             case R.id.day1Rest9IntermediateFinishButton:
