@@ -40,6 +40,17 @@
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/breathe"/>
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/timer_intermediate_day5_rest8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/aldrich"/>
+
             </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.cardview.widget.CardView>

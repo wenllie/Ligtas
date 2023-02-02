@@ -28,7 +28,7 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    AppCompatButton scanQRCodeMainActButton;
+    AppCompatButton scanQRCodeMainActButton, acceptedListButton;
     DatabaseReference acceptedReference;
 
     private Calendar calendar;
@@ -45,11 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         acceptedReference = FirebaseDatabase.getInstance().getReference().child("Accepted");
         scanQRCodeMainActButton = findViewById(R.id.scanQRCodeMainActButton);
+        acceptedListButton = findViewById(R.id.acceptedListButton);
 
 
         scanQRCodeMainActButton.setOnClickListener(this);
+        acceptedListButton.setOnClickListener(this);
     }
 
     @Override
@@ -65,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.scanQRCodeMainActButton:
                 scanQRCode();
+                break;
+
+            case R.id.acceptedListButton:
+                startActivity(new Intent(MainActivity.this, AcceptedListActivity.class));
+                finish();
                 break;
 
         }
@@ -152,7 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                             if (currentDate.equalsIgnoreCase(dateTextView.getText().toString())) {
-                                acceptedReference.child(userType).child(currentDate).child(IDNumber).child("Name").setValue(nameTextView.getText().toString());
+                                acceptedReference.child(userType).child(currentDate).child(IDNumber).child("fullName").setValue(nameTextView.getText().toString());
+                                acceptedReference.child(userType).child(currentDate).child(IDNumber).child("idNumber").setValue(IDNumber);
                             } else {
                                 Toast.makeText(MainActivity.this, "Old QR Code", Toast.LENGTH_SHORT).show();
                             }

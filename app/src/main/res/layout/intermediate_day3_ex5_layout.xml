@@ -45,19 +45,30 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="15dp"
                         android:gravity="center"
                         android:text="Alternating Knee-To-Chests"
-                        android:textSize="32dp"
+                        android:textSize="28sp"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="5dp"
                         android:gravity="center"
                         android:text="20s"
-                        android:textSize="32dp" />
+                        android:textSize="28sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/timer_intermediate_day3_ex5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/aldrich"/>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

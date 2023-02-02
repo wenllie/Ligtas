@@ -48,6 +48,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
         day7AdvancedRelativeLayout = findViewById(R.id.day7AdvancedRelativeLayout);
 
 
+        day2AdvancedRelativeLayout.setEnabled(false);
+        day3AdvancedRelativeLayout.setEnabled(false);
+        day4AdvancedRelativeLayout.setEnabled(false);
+        day5AdvancedRelativeLayout.setEnabled(false);
+        day6AdvancedRelativeLayout.setEnabled(false);
+        day7AdvancedRelativeLayout.setEnabled(false);
+
         DatabaseReference workoutReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
         workoutReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -96,6 +103,12 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
 
                                                                     checkboxAdvancedDay1.setVisibility(View.VISIBLE);
                                                                     day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(true);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -110,6 +123,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay2.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(true);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -124,6 +144,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay3.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(true);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -138,6 +165,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay4.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(true);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -152,6 +186,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay5.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(true);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -166,6 +207,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay6.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(true);
 
                                                                 }
 
@@ -180,6 +228,13 @@ public class AdvancedWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxAdvancedDay7.setVisibility(View.VISIBLE);
+                                                                    day1AdvancedRelativeLayout.setEnabled(false);
+                                                                    day2AdvancedRelativeLayout.setEnabled(false);
+                                                                    day3AdvancedRelativeLayout.setEnabled(false);
+                                                                    day4AdvancedRelativeLayout.setEnabled(false);
+                                                                    day5AdvancedRelativeLayout.setEnabled(false);
+                                                                    day6AdvancedRelativeLayout.setEnabled(false);
+                                                                    day7AdvancedRelativeLayout.setEnabled(false);
 
                                                                 }
 

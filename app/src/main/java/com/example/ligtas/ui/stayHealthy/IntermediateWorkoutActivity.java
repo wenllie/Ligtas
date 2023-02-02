@@ -48,6 +48,12 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
         day6IntermediateRelativeLayout = findViewById(R.id.day6IntermediateRelativeLayout);
         day7IntermediateRelativeLayout = findViewById(R.id.day7IntermediateRelativeLayout);
 
+        day2IntermediateRelativeLayout.setEnabled(false);
+        day3IntermediateRelativeLayout.setEnabled(false);
+        day4IntermediateRelativeLayout.setEnabled(false);
+        day5IntermediateRelativeLayout.setEnabled(false);
+        day6IntermediateRelativeLayout.setEnabled(false);
+        day7IntermediateRelativeLayout.setEnabled(false);
 
         DatabaseReference workoutReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -97,7 +103,12 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
 
                                                                     checkboxIntermediateDay1.setVisibility(View.VISIBLE);
                                                                     day1IntermediateRelativeLayout.setEnabled(false);
-
+                                                                    day2IntermediateRelativeLayout.setEnabled(true);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
                                                                 }
 
                                                             }
@@ -111,6 +122,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay2.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(true);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -125,6 +143,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay3.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(true);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -139,6 +164,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay4.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(true);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -153,6 +185,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay5.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(true);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -167,6 +206,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay6.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(true);
 
                                                                 }
 
@@ -181,6 +227,13 @@ public class IntermediateWorkoutActivity extends AppCompatActivity implements Vi
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxIntermediateDay7.setVisibility(View.VISIBLE);
+                                                                    day1IntermediateRelativeLayout.setEnabled(false);
+                                                                    day2IntermediateRelativeLayout.setEnabled(false);
+                                                                    day3IntermediateRelativeLayout.setEnabled(false);
+                                                                    day4IntermediateRelativeLayout.setEnabled(false);
+                                                                    day5IntermediateRelativeLayout.setEnabled(false);
+                                                                    day6IntermediateRelativeLayout.setEnabled(false);
+                                                                    day7IntermediateRelativeLayout.setEnabled(false);
 
                                                                 }
 

@@ -47,6 +47,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
         day6BeginnerRelativeLayout = findViewById(R.id.day6BeginnerRelativeLayout);
         day7BeginnerRelativeLayout = findViewById(R.id.day7BeginnerRelativeLayout);
 
+        day2BeginnerRelativeLayout.setEnabled(false);
+        day3BeginnerRelativeLayout.setEnabled(false);
+        day4BeginnerRelativeLayout.setEnabled(false);
+        day5BeginnerRelativeLayout.setEnabled(false);
+        day6BeginnerRelativeLayout.setEnabled(false);
+        day7BeginnerRelativeLayout.setEnabled(false);
+
 
         DatabaseReference workoutReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
@@ -96,6 +103,12 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                                                     checkboxBeginnerDay1.setVisibility(View.VISIBLE);
                                                                     day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(true);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -110,6 +123,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(true);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -124,6 +144,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(true);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -138,6 +165,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(true);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -152,6 +186,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(true);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -166,6 +207,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(true);
 
                                                                 }
 
@@ -180,6 +228,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -243,6 +298,12 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                                                     checkboxBeginnerDay1.setVisibility(View.VISIBLE);
                                                                     day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(true);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
                                                                 }
 
                                                             }
@@ -256,6 +317,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(true);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -270,6 +338,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(true);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -284,6 +359,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(true);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -298,6 +380,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(true);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -312,6 +401,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(true);
 
                                                                 }
 
@@ -326,6 +422,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -389,6 +492,12 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
 
                                                                     checkboxBeginnerDay1.setVisibility(View.VISIBLE);
                                                                     day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(true);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -403,6 +512,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay2.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(true);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -417,6 +533,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay3.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(true);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -431,6 +554,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay4.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(true);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -445,6 +575,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay5.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(true);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 
@@ -459,6 +596,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay6.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(true);
 
                                                                 }
 
@@ -473,6 +617,13 @@ public class BeginnerWorkoutActivity extends AppCompatActivity implements View.O
                                                                 if (snapsKey.equalsIgnoreCase("Completed")) {
 
                                                                     checkboxBeginnerDay7.setVisibility(View.VISIBLE);
+                                                                    day1BeginnerRelativeLayout.setEnabled(false);
+                                                                    day2BeginnerRelativeLayout.setEnabled(false);
+                                                                    day3BeginnerRelativeLayout.setEnabled(false);
+                                                                    day4BeginnerRelativeLayout.setEnabled(false);
+                                                                    day5BeginnerRelativeLayout.setEnabled(false);
+                                                                    day6BeginnerRelativeLayout.setEnabled(false);
+                                                                    day7BeginnerRelativeLayout.setEnabled(false);
 
                                                                 }
 

@@ -1,10 +1,12 @@
 package com.example.ligtas.ui.stayHealthy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -38,11 +40,27 @@ public class Day7IntermediateActivity extends AppCompatActivity implements View.
 
     @Override
     public void onBackPressed() {
-        Intent toStayHealthy = new Intent(Day7IntermediateActivity.this, IntermediateWorkoutActivity.class);
-        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(toStayHealthy);
-        finish();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Exercise")
+                .setMessage("Are you sure you want to cancel your exercise?\n\nNote: If you cancel your exercise, your data won't be save.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent toStayHealthy = new Intent(Day7IntermediateActivity.this, IntermediateWorkoutActivity.class);
+                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(toStayHealthy);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .show();
     }
 
     @Override

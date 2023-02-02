@@ -1,11 +1,13 @@
 package com.example.ligtas.ui.stayHealthy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -229,11 +231,27 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
 
     @Override
     public void onBackPressed() {
-        Intent toStayHealthy = new Intent(Day1IntermediateActivity.this, IntermediateWorkoutActivity.class);
-        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(toStayHealthy);
-        finish();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Exercise")
+                .setMessage("Are you sure you want to cancel your exercise?\n\nNote: If you cancel your exercise, your data won't be save.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent toStayHealthy = new Intent(Day1IntermediateActivity.this, IntermediateWorkoutActivity.class);
+                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(toStayHealthy);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .show();
     }
 
     @Override
@@ -276,7 +294,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 Glide.with(this).load(R.drawable.squats_exercise).into(intermediate_day1_ex2_photo);
                 break;
 
-            case R.id.day1Rest1StartButton:
+            case R.id.day1Rest1IntermediateStartButton:
                 intermediate_day1_rest1_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -307,7 +325,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest1FinishButton:
+            case R.id.day1Rest1IntermediateFinishButton:
                 intermediate_day1_rest1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.VISIBLE);
@@ -321,7 +339,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex2StartButton:
+            case R.id.day1Ex2IntermediateStartButton:
                 intermediate_day1_ex2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex3_layout.setVisibility(View.GONE);
@@ -351,7 +369,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Ex2NextButton:
+            case R.id.day1Ex2IntermediateNextButton:
                 intermediate_day1_rest2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -365,7 +383,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest2StartButton:
+            case R.id.day1Rest2IntermediateStartButton:
                 intermediate_day1_rest2_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -396,7 +414,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest2FinishButton:
+            case R.id.day1Rest2IntermediateFinishButton:
                 intermediate_day1_rest2_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -410,7 +428,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex3StartButton:
+            case R.id.day1Ex3IntermediateStartButton:
                 intermediate_day1_ex3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -425,7 +443,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 day1Ex3IntermediateNextButton.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.day1Ex3NextButton:
+            case R.id.day1Ex3IntermediateNextButton:
                 intermediate_day1_rest3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -439,7 +457,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest3StartButton:
+            case R.id.day1Rest3IntermediateStartButton:
                 intermediate_day1_rest3_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -470,7 +488,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest3FinishButton:
+            case R.id.day1Rest3IntermediateFinishButton:
                 intermediate_day1_rest3_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -484,7 +502,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex4StartButton:
+            case R.id.day1Ex4IntermediateStartButton:
                 intermediate_day1_ex4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -514,7 +532,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Ex4NextButton:
+            case R.id.day1Ex4IntermediateNextButton:
                 intermediate_day1_rest4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -528,7 +546,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest4StartButton:
+            case R.id.day1Rest4IntermediateStartButton:
                 intermediate_day1_rest4_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -559,7 +577,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest4FinishButton:
+            case R.id.day1Rest4IntermediateFinishButton:
                 intermediate_day1_rest4_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -573,7 +591,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex5StartButton:
+            case R.id.day1Ex5IntermediateStartButton:
                 intermediate_day1_ex5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -603,7 +621,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Ex5NextButton:
+            case R.id.day1Ex5IntermediateNextButton:
                 intermediate_day1_rest5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -617,7 +635,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest5StartButton:
+            case R.id.day1Rest5IntermediateStartButton:
                 intermediate_day1_rest5_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -648,7 +666,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest5FinishButton:
+            case R.id.day1Rest5IntermediateFinishButton:
                 intermediate_day1_rest5_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -662,7 +680,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex6StartButton:
+            case R.id.day1Ex6IntermediateStartButton:
                 intermediate_day1_ex6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -692,7 +710,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Ex6NextButton:
+            case R.id.day1Ex6IntermediateNextButton:
                 intermediate_day1_rest6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -706,7 +724,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest6StartButton:
+            case R.id.day1Rest6IntermediateStartButton:
                 intermediate_day1_rest6_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -737,7 +755,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest6FinishButton:
+            case R.id.day1Rest6IntermediateFinishButton:
                 intermediate_day1_rest6_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -751,7 +769,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex7StartButton:
+            case R.id.day1Ex7IntermediateStartButton:
                 intermediate_day1_ex7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -766,7 +784,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 day1Ex7IntermediateNextButton.setVisibility(View.VISIBLE);
                 break;
 
-            case R.id.day1Ex7NextButton:
+            case R.id.day1Ex7IntermediateNextButton:
                 intermediate_day1_rest7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -780,7 +798,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest7StartButton:
+            case R.id.day1Rest7IntermediateStartButton:
                 intermediate_day1_rest7_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -811,7 +829,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest7FinishButton:
+            case R.id.day1Rest7IntermediateFinishButton:
                 intermediate_day1_rest7_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -825,7 +843,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex8StartButton:
+            case R.id.day1Ex8IntermediateStartButton:
                 intermediate_day1_ex8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -855,7 +873,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Ex8NextButton:
+            case R.id.day1Ex8IntermediateNextButton:
                 intermediate_day1_rest8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -869,7 +887,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Rest8StartButton:
+            case R.id.day1Rest8IntermediateStartButton:
                 intermediate_day1_rest8_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -900,7 +918,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 }.start();
                 break;
 
-            case R.id.day1Rest8FinishButton:
+            case R.id.day1Rest8IntermediateFinishButton:
                 intermediate_day1_rest8_layout.setVisibility(View.GONE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -914,7 +932,7 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day1_ex10_layout.setVisibility(View.GONE);
                 break;
 
-            case R.id.day1Ex9StartButton:
+            case R.id.day1Ex9IntermediateStartButton:
                 intermediate_day1_ex9_layout.setVisibility(View.VISIBLE);
                 intermediate_day1_ex1_layout.setVisibility(View.GONE);
                 intermediate_day1_ex2_layout.setVisibility(View.GONE);
@@ -940,6 +958,51 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                     public void onFinish() {
                         timer_intermediate_day1_ex9.setText("00:00");
                         day1Ex9IntermediateNextButton.setVisibility(View.VISIBLE);
+                    }
+                }.start();
+                break;
+
+            case R.id.day1Ex9IntermediateNextButton:
+                intermediate_day1_rest9_layout.setVisibility(View.VISIBLE);
+                intermediate_day1_ex1_layout.setVisibility(View.GONE);
+                intermediate_day1_ex2_layout.setVisibility(View.GONE);
+                intermediate_day1_ex3_layout.setVisibility(View.GONE);
+                intermediate_day1_ex4_layout.setVisibility(View.GONE);
+                intermediate_day1_ex5_layout.setVisibility(View.GONE);
+                intermediate_day1_ex6_layout.setVisibility(View.GONE);
+                intermediate_day1_ex7_layout.setVisibility(View.GONE);
+                intermediate_day1_ex8_layout.setVisibility(View.GONE);
+                intermediate_day1_ex9_layout.setVisibility(View.GONE);
+                intermediate_day1_ex10_layout.setVisibility(View.GONE);
+                break;
+
+            case R.id.day1Rest9IntermediateStartButton:
+                intermediate_day1_rest9_layout.setVisibility(View.VISIBLE);
+                intermediate_day1_ex1_layout.setVisibility(View.GONE);
+                intermediate_day1_ex2_layout.setVisibility(View.GONE);
+                intermediate_day1_ex3_layout.setVisibility(View.GONE);
+                intermediate_day1_ex4_layout.setVisibility(View.GONE);
+                intermediate_day1_ex5_layout.setVisibility(View.GONE);
+                intermediate_day1_ex6_layout.setVisibility(View.GONE);
+                intermediate_day1_ex7_layout.setVisibility(View.GONE);
+                intermediate_day1_ex8_layout.setVisibility(View.GONE);
+                intermediate_day1_ex9_layout.setVisibility(View.GONE);
+                intermediate_day1_ex10_layout.setVisibility(View.GONE);
+                day1Rest8IntermediateStartButton.setVisibility(View.GONE);
+                new CountDownTimer(26000, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                        // Used for formatting digit to be in 2 digits only
+                        NumberFormat f = new DecimalFormat("00");
+                        long min = (millisUntilFinished / 60000) % 60;
+                        long sec = (millisUntilFinished / 1000) % 60;
+                        timer_intermediate_day1_rest9.setText(f.format(min) + ":" + f.format(sec));
+
+                    }
+
+                    // When the task is over it will print 00:00 there
+                    public void onFinish() {
+                        timer_intermediate_day1_rest9.setText("00:00");
+                        day1Rest9IntermediateFinishButton.setVisibility(View.VISIBLE);
                     }
                 }.start();
                 break;
@@ -1177,13 +1240,145 @@ public class Day1IntermediateActivity extends AppCompatActivity implements View.
                 break;
 
             case R.id.aboutDay1Ex1IntermediateButton:
-                final DialogPlus about = DialogPlus.newDialog(Day1IntermediateActivity.this)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_box_beginner_day1_ex1))
-                        .setExpanded(true, 800)
-                        .setContentBackgroundResource(R.drawable.dialog_rounded_top)
-                        .create();
+                new AlertDialog.Builder(this)
+                        .setTitle("Squats")
+                        .setMessage("•\tStand with your feet about shoulder-width apart and slightly turned out with your weight in your heels.\n" +
+                                "•\tHinge your hips to sit your butt back and bend your knees until your thighs are parallel to the ground.\n" +
+                                "•\tDrive through your heels to stand back up straight. Squeeze your butt and keep your core tight as you stand.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
 
-                about.show();
+            case R.id.aboutDay1Ex2IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("High Knees")
+                        .setMessage("•\tStand with your feet hip-width apart.\n" +
+                                "•\tRun in place, bringing your knees up toward your chest as high as possible while pumping your arms.\n" +
+                                "•\tKeep your chest lifted, core engaged, and land lightly on the balls of your feet.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex3IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Reverse Lunges")
+                        .setMessage("•\tStart standing with your feet about shoulder-width apart.\n" +
+                                "•\tStep backwards with your left foot, landing on the ball of your foot and bending your knees to create two 90-degree angles.\n" +
+                                "•\tPush through your right heel to return to standing.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex4IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Plank Jacks")
+                        .setMessage("•\tStart in high plank.\n" +
+                                "•\tKeeping your core engaged, jump your feet out and in (like jumping jacks).\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex5IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Skater Hops")
+                        .setMessage("•\tStarting at the left of your space, squat slightly then jump to the right as far as you can.\n" +
+                                "•\tLand on your right foot and try not to touch your left foot down.\n" +
+                                "•\tJump back across to land on your left foot.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex6IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Side Lunges")
+                        .setMessage("•\tStand with your feet hip-width apart.\n" +
+                                "•\tTake a big step out to your right. Bend your knee and push your butt back to do a side lunge. Keep your chest lifted and core tight.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex7IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Push-Ups")
+                        .setMessage("•\tStart in a high plank position with your hands flat on the floor about shoulder-width apart, wrists under shoulders.\n" +
+                                "•\tKeeping your body in one long line, bend your arms and lower yourself as close to the floor as you can. Your elbows should be at about a 45-degree angle to your torso.\n" +
+                                "•\tPush back up to start.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex8IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Bicycle Crunches")
+                        .setMessage("•\tSit on floor with your knees bent, feet lifted, and your hands behind head.\n" +
+                                "•\tKeep your chest up and back straight as you lean back to engage your abs.\n" +
+                                "•\tTwist to bring your right elbow to your left knee, straightening your right leg.\n" +
+                                "•\tAlternate sides with control.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex9IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Mountain Climbers")
+                        .setMessage("•\tStart in a high plank and draw your right knee under your torso, keeping your toes off the ground.\n" +
+                                "•\tReturn your right foot to the starting position.\n" +
+                                "•\tSwitch legs and bring your left knee under your chest. Keep switching legs as if you're running in place.\n\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex10IntermediateButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Donkey Kicks")
+                        .setMessage("•\tStart on all fours.\n" +
+                                "•\tPull your right knee toward your chest, keeping your foot flexed.\n" +
+                                "•\tThen, kick your right leg up behind you and toward the sky, then back down, keeping your knee bent and foot flexed.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
                 break;
 
         }

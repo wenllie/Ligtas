@@ -1,11 +1,13 @@
 package com.example.ligtas.ui.stayHealthy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -230,11 +232,27 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onBackPressed() {
-        Intent toStayHealthy = new Intent(Day1BeginnerActivity.this, BeginnerWorkoutActivity.class);
-        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(toStayHealthy);
-        finish();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Exercise")
+                .setMessage("Are you sure you want to cancel your exercise?\n\nNote: If you cancel your exercise, your data won't be save.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent toStayHealthy = new Intent(Day1BeginnerActivity.this, BeginnerWorkoutActivity.class);
+                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(toStayHealthy);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .show();
     }
 
     @Override
@@ -1220,13 +1238,145 @@ public class Day1BeginnerActivity extends AppCompatActivity implements View.OnCl
                 break;
 
             case R.id.aboutDay1Ex1BeginnerButton:
-                final DialogPlus about = DialogPlus.newDialog(Day1BeginnerActivity.this)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_box_beginner_day1_ex1))
-                        .setExpanded(true, 800)
-                        .setContentBackgroundResource(R.drawable.dialog_rounded_top)
-                        .create();
+                new AlertDialog.Builder(this)
+                        .setTitle("Squats")
+                        .setMessage("•\tStand with your feet about shoulder-width apart and slightly turned out with your weight in your heels.\n" +
+                                "•\tHinge your hips to sit your butt back and bend your knees until your thighs are parallel to the ground.\n" +
+                                "•\tDrive through your heels to stand back up straight. Squeeze your butt and keep your core tight as you stand.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
 
-                about.show();
+            case R.id.aboutDay1Ex2BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("High Knees")
+                        .setMessage("•\tStand with your feet hip-width apart.\n" +
+                                "•\tRun in place, bringing your knees up toward your chest as high as possible while pumping your arms.\n" +
+                                "•\tKeep your chest lifted, core engaged, and land lightly on the balls of your feet.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex3BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Reverse Lunges")
+                        .setMessage("•\tStart standing with your feet about shoulder-width apart.\n" +
+                                "•\tStep backwards with your left foot, landing on the ball of your foot and bending your knees to create two 90-degree angles.\n" +
+                                "•\tPush through your right heel to return to standing.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex4BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Plank Jacks")
+                        .setMessage("•\tStart in high plank.\n" +
+                                "•\tKeeping your core engaged, jump your feet out and in (like jumping jacks).\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex5BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Skater Hops")
+                        .setMessage("•\tStarting at the left of your space, squat slightly then jump to the right as far as you can.\n" +
+                                "•\tLand on your right foot and try not to touch your left foot down.\n" +
+                                "•\tJump back across to land on your left foot.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex6BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Side Lunges")
+                        .setMessage("•\tStand with your feet hip-width apart.\n" +
+                                "•\tTake a big step out to your right. Bend your knee and push your butt back to do a side lunge. Keep your chest lifted and core tight.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex7BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Push-Ups")
+                        .setMessage("•\tStart in a high plank position with your hands flat on the floor about shoulder-width apart, wrists under shoulders.\n" +
+                                "•\tKeeping your body in one long line, bend your arms and lower yourself as close to the floor as you can. Your elbows should be at about a 45-degree angle to your torso.\n" +
+                                "•\tPush back up to start.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex8BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Bicycle Crunches")
+                        .setMessage("•\tSit on floor with your knees bent, feet lifted, and your hands behind head.\n" +
+                                "•\tKeep your chest up and back straight as you lean back to engage your abs.\n" +
+                                "•\tTwist to bring your right elbow to your left knee, straightening your right leg.\n" +
+                                "•\tAlternate sides with control.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex9BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Mountain Climbers")
+                        .setMessage("•\tStart in a high plank and draw your right knee under your torso, keeping your toes off the ground.\n" +
+                                "•\tReturn your right foot to the starting position.\n" +
+                                "•\tSwitch legs and bring your left knee under your chest. Keep switching legs as if you're running in place.\n\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+                break;
+
+            case R.id.aboutDay1Ex10BeginnerButton:
+                new AlertDialog.Builder(this)
+                        .setTitle("Donkey Kicks")
+                        .setMessage("•\tStart on all fours.\n" +
+                                "•\tPull your right knee toward your chest, keeping your foot flexed.\n" +
+                                "•\tThen, kick your right leg up behind you and toward the sky, then back down, keeping your knee bent and foot flexed.\n" +
+                                "•\tRepeat on the other side.\n")
+                        .setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
                 break;
 
         }

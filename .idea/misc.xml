@@ -221,6 +221,7 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex2_layout.xml" value="0.3811074918566775" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex3_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex4_layout.xml" value="0.22" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex5_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex6_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex7_layout.xml" value="0.1762917933130699" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/layout/beginner_day5_ex8_layout.xml" value="0.1762917933130699" />
@@ -366,9 +367,12 @@
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/app/src/main/res/menu/user_navigation.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/drawable-v24/main_rounded_button_primary_color.xml" value="0.224" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/drawable/card_view_scanned_code.xml" value="0.1365" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/accepted_list_content_layout.xml" value="0.3614583333333333" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/activity_accepted_list.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/activity_scan_qr_code.xml" value="0.3625" />
         <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/card_view_scanned_code.xml" value="0.1762917933130699" />
+        <entry key="..\:/SCHOOL/AndroidStudioCreations/Ligtas/ligtasscanner/src/main/res/layout/recycler_accepted_list_main.xml" value="0.3614583333333333" />
       </map>
     </option>
   </component>
