@@ -349,7 +349,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex9_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex2AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -512,7 +512,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex9_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex4AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -601,7 +601,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex9_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex5AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -690,7 +690,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex9_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex6AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -853,7 +853,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex9_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex8AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -942,7 +942,7 @@ public class Day1AdvancedActivity extends AppCompatActivity implements View.OnCl
                 advanced_day1_ex8_layout.setVisibility(View.GONE);
                 advanced_day1_ex10_layout.setVisibility(View.GONE);
                 day1Ex9AdvancedStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(31000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");

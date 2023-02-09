@@ -119,68 +119,76 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
 
                 DatabaseReference waterIntakeReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
-                waterIntakeReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (waterNeeded == 0) {
 
-                        for (DataSnapshot userTypeSnap : task.getResult().getChildren()) {
+                    Toast.makeText(this, "Please fill out the fields above", Toast.LENGTH_SHORT).show();
 
-                            String userTypeKey = userTypeSnap.getKey();
+                } else {
 
-                            if (userTypeKey.equalsIgnoreCase("Employees")) {
+                    waterIntakeReference.get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DataSnapshot> task) {
 
-                                for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
+                            for (DataSnapshot userTypeSnap : task.getResult().getChildren()) {
 
-                                    String idNumberKey = idNumberSnap.getKey();
+                                String userTypeKey = userTypeSnap.getKey();
 
-                                    for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
+                                if (userTypeKey.equalsIgnoreCase("Employees")) {
 
-                                        String userIdKey = userIdSnap.getKey();
+                                    for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
-                                        if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
+                                        String idNumberKey = idNumberSnap.getKey();
 
-                                            for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
+                                        for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
-                                                String waterIntakeKey = waterIntakeSnap.getKey();
+                                            String userIdKey = userIdSnap.getKey();
 
-                                                if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
+                                            if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                                    for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
+                                                for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
 
-                                                        String dateKey = dateSnap.getKey();
+                                                    String waterIntakeKey = waterIntakeSnap.getKey();
 
-                                                        if (dateKey.equalsIgnoreCase(currentDate)) {
+                                                    if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
 
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
+                                                        for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
 
-                                                        } else {
+                                                            String dateKey = dateSnap.getKey();
 
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                            Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                            toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                            toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                            startActivity(toStayHealthy);
-                                                            finish();
+                                                            if (dateKey.equalsIgnoreCase(currentDate)) {
+
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
+
+                                                            } else {
+
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                                Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                                toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                                toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                startActivity(toStayHealthy);
+                                                                finish();
+                                                            }
+
                                                         }
 
+                                                    } else {
+
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                        Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                        Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        startActivity(toStayHealthy);
+                                                        finish();
                                                     }
 
-                                                } else {
-
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                    Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                    Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                    toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                    toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                    startActivity(toStayHealthy);
-                                                    finish();
                                                 }
 
                                             }
@@ -189,62 +197,62 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
 
                                     }
 
-                                }
+                                } else if (userTypeKey.equalsIgnoreCase("Students")) {
 
-                            } else if (userTypeKey.equalsIgnoreCase("Students")) {
+                                    for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
-                                for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
+                                        String idNumberKey = idNumberSnap.getKey();
 
-                                    String idNumberKey = idNumberSnap.getKey();
+                                        for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
-                                    for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
+                                            String userIdKey = userIdSnap.getKey();
 
-                                        String userIdKey = userIdSnap.getKey();
+                                            if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                        if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
+                                                for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
 
-                                            for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
+                                                    String waterIntakeKey = waterIntakeSnap.getKey();
 
-                                                String waterIntakeKey = waterIntakeSnap.getKey();
+                                                    if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
 
-                                                if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
+                                                        for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
 
-                                                    for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
+                                                            String dateKey = dateSnap.getKey();
 
-                                                        String dateKey = dateSnap.getKey();
+                                                            if (dateKey.equalsIgnoreCase(currentDate)) {
 
-                                                        if (dateKey.equalsIgnoreCase(currentDate)) {
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
 
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
+                                                            } else {
 
-                                                        } else {
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                                Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                                toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                                toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                startActivity(toStayHealthy);
+                                                                finish();
+                                                            }
 
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                            Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                            toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                            toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                            startActivity(toStayHealthy);
-                                                            finish();
                                                         }
 
+                                                    } else {
+
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                        Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                        Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        startActivity(toStayHealthy);
+                                                        finish();
                                                     }
 
-                                                } else {
-
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                    Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                    Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                    toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                    toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                    startActivity(toStayHealthy);
-                                                    finish();
                                                 }
 
                                             }
@@ -253,62 +261,62 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
 
                                     }
 
-                                }
+                                } else if (userTypeKey.equalsIgnoreCase("Professors")) {
 
-                            } else if (userTypeKey.equalsIgnoreCase("Professors")) {
+                                    for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
 
-                                for (DataSnapshot idNumberSnap : userTypeSnap.getChildren()) {
+                                        String idNumberKey = idNumberSnap.getKey();
 
-                                    String idNumberKey = idNumberSnap.getKey();
+                                        for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
 
-                                    for (DataSnapshot userIdSnap : idNumberSnap.getChildren()) {
+                                            String userIdKey = userIdSnap.getKey();
 
-                                        String userIdKey = userIdSnap.getKey();
+                                            if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
 
-                                        if (userIdKey.equalsIgnoreCase(FirebaseAuth.getInstance().getUid())) {
+                                                for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
 
-                                            for (DataSnapshot waterIntakeSnap : userIdSnap.getChildren()) {
+                                                    String waterIntakeKey = waterIntakeSnap.getKey();
 
-                                                String waterIntakeKey = waterIntakeSnap.getKey();
+                                                    if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
 
-                                                if (waterIntakeKey.equalsIgnoreCase("Water Intake")) {
+                                                        for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
 
-                                                    for (DataSnapshot dateSnap : waterIntakeSnap.getChildren()) {
+                                                            String dateKey = dateSnap.getKey();
 
-                                                        String dateKey = dateSnap.getKey();
+                                                            if (dateKey.equalsIgnoreCase(currentDate)) {
 
-                                                        if (dateKey.equalsIgnoreCase(currentDate)) {
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
 
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "You've already set your water intake goal today!", Toast.LENGTH_SHORT).show();
+                                                            } else {
 
-                                                        } else {
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                                waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                                Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                                Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                                toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                                toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                startActivity(toStayHealthy);
+                                                                finish();
+                                                            }
 
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                            waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                            Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                            Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                            toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                            toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                            startActivity(toStayHealthy);
-                                                            finish();
                                                         }
 
+                                                    } else {
+
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
+                                                        waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
+                                                        Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
+                                                        Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
+                                                        toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                        toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                        startActivity(toStayHealthy);
+                                                        finish();
                                                     }
 
-                                                } else {
-
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Goal").setValue(String.valueOf(Math.round(waterNeeded)));
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Progress").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Current").setValue("0");
-                                                    waterIntakeReference.child(userTypeKey).child(idNumberKey).child(userIdKey).child("Water Intake").child(currentDate).child("Percentage").setValue("0");
-                                                    Toast.makeText(WaterIntakeGoalActivity.this, "Goal Set!", Toast.LENGTH_SHORT).show();
-                                                    Intent toStayHealthy = new Intent(WaterIntakeGoalActivity.this, WaterIntakeActivity.class);
-                                                    toStayHealthy.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                    toStayHealthy.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                    startActivity(toStayHealthy);
-                                                    finish();
                                                 }
 
                                             }
@@ -322,9 +330,9 @@ public class WaterIntakeGoalActivity extends AppCompatActivity implements View.O
                             }
 
                         }
+                    });
 
-                    }
-                });
+                }
 
                 break;
 

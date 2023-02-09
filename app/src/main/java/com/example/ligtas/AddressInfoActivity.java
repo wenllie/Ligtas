@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.example.ligtas.dbhelpers.AddressDetails;
 import com.example.ligtas.dbhelpers.HealthDetails;
+import com.example.ligtas.ui.stayHealthy.Day6IntermediateActivity;
+import com.example.ligtas.ui.stayHealthy.IntermediateWorkoutActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -58,8 +60,24 @@ public class AddressInfoActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
-        finishAffinity();
-        finish();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Exercise")
+                .setMessage("Are you sure you want to cancel your registration?\n\nNote: Once you cancel your registration, you will be needing to contact support if you want to register again with the same credentials.")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finishAffinity();
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .show();
     }
 
     @Override

@@ -465,7 +465,7 @@ public class Day5IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day5_ex8_layout.setVisibility(View.GONE);
                 intermediate_day5_ex9_layout.setVisibility(View.GONE);
                 day5Ex4IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -550,7 +550,7 @@ public class Day5IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day5_ex8_layout.setVisibility(View.GONE);
                 intermediate_day5_ex9_layout.setVisibility(View.GONE);
                 day5Ex5IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -845,7 +845,7 @@ public class Day5IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day5_ex7_layout.setVisibility(View.GONE);
                 intermediate_day5_ex8_layout.setVisibility(View.GONE);
                 day5Ex9IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");

@@ -140,6 +140,9 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                         dialogInterface.dismiss();
+                        mAuth.signOut();
+                        startActivity(new Intent(EditProfileActivity.this, MainActivity.class));
+                        finish();
 /*                        if (current.after(resultdate)) {
                             mAuth.getCurrentUser().delete().addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

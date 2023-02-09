@@ -397,7 +397,7 @@ public class Day3IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day3_ex8_layout.setVisibility(View.GONE);
                 intermediate_day3_ex9_layout.setVisibility(View.GONE);
                 day3Ex3IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -482,7 +482,7 @@ public class Day3IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day3_ex8_layout.setVisibility(View.GONE);
                 intermediate_day3_ex9_layout.setVisibility(View.GONE);
                 day3Ex4IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -567,7 +567,7 @@ public class Day3IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day3_ex8_layout.setVisibility(View.GONE);
                 intermediate_day3_ex9_layout.setVisibility(View.GONE);
                 day3Ex5IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -792,7 +792,7 @@ public class Day3IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day3_ex7_layout.setVisibility(View.GONE);
                 intermediate_day3_ex9_layout.setVisibility(View.GONE);
                 day3Ex8IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");
@@ -877,7 +877,7 @@ public class Day3IntermediateActivity extends AppCompatActivity implements View.
                 intermediate_day3_ex7_layout.setVisibility(View.GONE);
                 intermediate_day3_ex8_layout.setVisibility(View.GONE);
                 day3Ex9IntermediateStartButton.setVisibility(View.GONE);
-                new CountDownTimer(21000, 1000) {
+                new CountDownTimer(26000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         // Used for formatting digit to be in 2 digits only
                         NumberFormat f = new DecimalFormat("00");

@@ -14,6 +14,8 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.ligtas.ui.settings.EditProfileActivity;
+import com.example.ligtas.ui.settings.SettingsActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,6 +42,7 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
             "Chronic Kidney Disease", "Chronic Liver Disease", "Chronic Obstructive Pulmonary Disease (COPD)", "Color Blindness", "Diabetes", "Down Syndrome",
             "Emphysema", "Fluid and electrolyte disorders", "Heart disease", "Hepatitis B", "High blood pressure", "Hypertension", "Immunodeficiency State",
             "Neurologic Disease", "Obesity", "Respiratory Disease", "Sleep apnea", "Tuberculosis"};
+    String vaccinated;
 
     FirebaseAuth mAuth;
 
@@ -155,14 +158,36 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
                     yesCovid19Vaccinated.setVisibility(View.VISIBLE);
                     covid19VaccinatedYesSpinner.setVisibility(View.VISIBLE);
 
-                    if (covid19VaccinatedYesSpinner.getSelectedItem().toString().equalsIgnoreCase("NA")) {
-
-                    }
-
                 } else {
                     yesCovid19Vaccinated.setVisibility(View.GONE);
                     covid19VaccinatedYesSpinner.setVisibility(View.GONE);
-                    covid19VaccinatedYesSpinner.getSelectedItem().toString().equalsIgnoreCase("");
+                    vaccinated = "NA";
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        covid19VaccinatedYesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (covid19VaccinatedYesSpinner.getSelectedItem().toString().equalsIgnoreCase("First Dose")) {
+
+                    vaccinated = covid19VaccinatedYesSpinner.getSelectedItem().toString();
+
+                } else if (covid19VaccinatedYesSpinner.getSelectedItem().toString().equalsIgnoreCase("Second Dose")) {
+
+                    vaccinated = covid19VaccinatedYesSpinner.getSelectedItem().toString();
+
+                } else if (covid19VaccinatedYesSpinner.getSelectedItem().toString().equalsIgnoreCase("Booster")) {
+
+                    vaccinated = covid19VaccinatedYesSpinner.getSelectedItem().toString();
+
                 }
 
             }
@@ -174,6 +199,15 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
         });
 
         healthInfoSaveBtn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent toSettings = new Intent(HealthInfoActivity.this, AddressInfoActivity.class);
+        toSettings.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        toSettings.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(toSettings);
+        finish();
     }
 
     @Override
@@ -194,7 +228,6 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
         String height = registerHeight.getText().toString();
         String weight = registerWeight.getText().toString();
         String covid19Vaccinated = covid19VaccinatedSpinner.getSelectedItem().toString();
-        String covid19Vaccine = covid19VaccinatedYesSpinner.getSelectedItem().toString();
         String comorbidity = comorbiditySpinner.getSelectedItem().toString();
         String healthIssue = healthIssueName.getText().toString();
 
@@ -238,7 +271,7 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("height").setValue(height);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("weight").setValue(weight);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccinated").setValue(covid19Vaccinated);
-                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(covid19Vaccine);
+                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(vaccinated);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssue").setValue(healthIssue);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssueName").setValue(healthIssueName);
 
@@ -263,7 +296,7 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("height").setValue(height);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("weight").setValue(weight);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccinated").setValue(covid19Vaccinated);
-                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(covid19Vaccine);
+                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(vaccinated);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssue").setValue(healthIssue);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssueName").setValue(healthIssueName);
 
@@ -288,7 +321,7 @@ public class HealthInfoActivity extends AppCompatActivity implements View.OnClic
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("height").setValue(height);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("weight").setValue(weight);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccinated").setValue(covid19Vaccinated);
-                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(covid19Vaccine);
+                                        personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("covid19Vaccine").setValue(vaccinated);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssue").setValue(healthIssue);
                                         personalReference.child(userTypeKey).child(idNumberKey).child(userIdSnap).child("Health Information").child("healthIssueName").setValue(healthIssueName);
 

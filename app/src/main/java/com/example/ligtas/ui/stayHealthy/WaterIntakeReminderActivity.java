@@ -53,8 +53,8 @@ public class WaterIntakeReminderActivity extends AppCompatActivity {
                     public void onClick(View view) {
 
                         if (timePicker.getHour() > 12) {
-                            reminderBinding.timeWaterIntakeReminderTextView.setText(String.format("%02d", (timePicker.getHour()-12)) + ":"
-                            + String.format("%02d", timePicker.getMinute()) + "PM");
+                            reminderBinding.timeWaterIntakeReminderTextView.setText(String.format("%02d", (timePicker.getHour() - 12)) + ":"
+                                    + String.format("%02d", timePicker.getMinute()) + "PM");
                         } else {
                             reminderBinding.timeWaterIntakeReminderTextView.setText(timePicker.getHour() + ":" + timePicker.getMinute() + "AM");
                         }
@@ -80,11 +80,10 @@ public class WaterIntakeReminderActivity extends AppCompatActivity {
         reminderBinding.setAlarmWaterIntakeReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(WaterIntakeReminderActivity.this, WaterIntakeNotificationPublisher.class);
                 pendingIntent = PendingIntent.getBroadcast(WaterIntakeReminderActivity.this, 0, intent, 0);
 
+                alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
                 Toast.makeText(WaterIntakeReminderActivity.this, "Notification alarm set!", Toast.LENGTH_SHORT).show();
                 onBackPressed();
